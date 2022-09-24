@@ -1,5 +1,6 @@
 .loginPage {
   width: 100%;
+  max-width: 600px;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -12,7 +13,8 @@
     color: #F7990F;
     font-size: 16px; }
   .loginPage_logo {
-    width: 40%; }
+    width: 40%;
+    max-width: 180px; }
   .loginPage_formSingIn {
     width: 80%;
     display: flex;

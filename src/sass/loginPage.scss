@@ -2,6 +2,7 @@
 
 .loginPage{
     width: 100%;
+    max-width: 600px;
     height: 100vh;
     @include flex-column-center;
     gap: 20px;
@@ -18,6 +19,7 @@
 
     &_logo{
         width: 40%;
+        max-width: 180px;
     }
     
     &_formSingIn {

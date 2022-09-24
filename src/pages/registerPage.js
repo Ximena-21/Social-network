@@ -1,3 +1,5 @@
+import { onNavigate } from "../helpers.js"
+
 function createRegisterPage () {
 
     const registerPageContainer = document.createElement('div')
@@ -38,8 +40,11 @@ function createRegisterPage () {
         console.log('iniciar sesion con google')
     })
 
-    registerPageContainer.querySelector('#clickSingIn').addEventListener('click', () => {
+    registerPageContainer.querySelector('#clickSingIn').addEventListener('click', (event) => {
         console.log('llevar a formulario de registro')
+        event.preventDefault()
+        onNavigate('/login')
+
     })
 
     return registerPageContainer

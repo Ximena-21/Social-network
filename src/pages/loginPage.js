@@ -38,8 +38,9 @@ function createLoginPage () {
         console.log('iniciar sesion con google')
     })
 
-    loginPageContainer.querySelector('#register').addEventListener('click', () => {
+    loginPageContainer.querySelector('#register').addEventListener('click', (event) => {
         console.log('llevar a formulario de registro')
+        event.preventDefault()
         onNavigate('/register')
 
     })
