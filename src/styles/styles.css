@@ -1,4 +1,6 @@
 @import url("./header.css");
+@import url("./loginPage.css");
+@import url("./registerPage.css");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,7 +8,5 @@
 
 body {
   width: 100%;
-  height: 100%; }
-
-body > .hidden {
-  display: none; }
+  height: 100%;
+  background-color: #EDEDED; }

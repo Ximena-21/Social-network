@@ -1,9 +1,50 @@
 $font-tittle: sans-serif;
+$primary-color: #5F15AD;
+$secundary-color: #F7990F;
+$tertiary-color: #1DAD4B;
 
 @mixin perfect-center {
     display: flex;
     align-items:center ;
     justify-content: center;
 }
+
+@mixin flex-column-center {
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column;
+}
+@mixin flex-column-row {
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: row;
+}
+
+@mixin input {
+    width: 90%;
+    height: 40px;
+    border: $primary-color solid 1px;
+    background: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: start;
+}
+@mixin button {
+    width: 90%;
+    height: 40px;
+    border: $primary-color solid 1px;
+    background: $primary-color;
+    border-radius: 10px;
+    // text-align: center;
+    padding: 0 40px;
+    color: #FFFFFF;
+}
+@mixin textGreen {
+    font-size: 12px;
+    color: $tertiary-color;
+}
+
 
 

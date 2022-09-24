@@ -1,0 +1,61 @@
+@import './generics.scss';
+
+.loginPage{
+    width: 100%;
+    height: 100vh;
+    @include flex-column-center;
+    gap: 20px;
+
+    &_welcome{
+        color: $primary-color;
+    }
+
+    &_msg{
+        // margin: 20px 0px 20px;
+        color: $secundary-color;
+        font-size: 16px;
+    }
+
+    &_logo{
+        width: 40%;
+    }
+    
+    &_formSingIn {
+        width: 80%;
+        // margin-top: 20px;
+        @include flex-column-center;
+        gap: 20px;
+    }
+    
+    &_formSingIn input {
+        @include input
+    }
+    
+    &_formSingIn input::placeholder{
+        color: $primary-color;
+        font-size: 11px;
+    }
+    
+    &_formSingIn button {
+        @include button
+    }
+    &_singInGoogle {
+        @include flex-column-row;
+        // gap: 10px;
+    }
+
+    &_singInGoogle--logo{
+        width: 10%;
+    }
+
+    &_singInGoogle--text{
+        @include textGreen;
+    }
+    &_singUp--register{
+        @include textGreen;
+    }
+    &_singUp--text{
+        font-size: 12px;
+        font-weight: 700;
+    }
+}

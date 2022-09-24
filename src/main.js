@@ -1,5 +1,9 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+import { onNavigate } from "./helpers.js"
 
-myFunction();
+// import { myFunction } from './lib/index.js';
+
+// myFunction();
+
+onNavigate('/')
