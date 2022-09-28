@@ -6,6 +6,7 @@ function createRegisterPage () {
     registerPageContainer.className = "registerPage"
 
     registerPageContainer.innerHTML = `
+        <img src="../img/home.png" alt="home icon" class="registerPage_home">
         <div class="registerPage_welcome--box">
             <img src="../img/logoK.png" alt="logo Knitters" class="registerPage_logo">
             <h2 class="registerPage_welcome">Bienvenido</h2>

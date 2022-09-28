@@ -1,27 +1,38 @@
 .registerPage {
   width: 100%;
+  max-width: 600px;
   height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 20px; }
+  flex-direction: column; }
+  .registerPage_home {
+    width: 8%;
+    max-width: 35px;
+    position: absolute;
+    top: 10px;
+    left: 20px; }
   .registerPage_welcome--box {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    padding-bottom: 20px;
+    gap: 5px; }
   .registerPage_welcome {
     color: #5F15AD; }
   .registerPage_logo {
-    width: 20%; }
+    width: 20%;
+    max-width: 50px; }
   .registerPage_formRegister {
     width: 80%;
+    padding-bottom: 35px;
+    gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 20px; }
+    flex-direction: column; }
   .registerPage_formRegister input {
     width: 90%;
     max-width: 260px;
@@ -33,7 +44,9 @@
     border-radius: 8px; }
   .registerPage_formRegister input::placeholder {
     color: #5F15AD;
-    font-size: 11px; }
+    font-size: 11px;
+    font-style: italic;
+    text-align: start; }
   .registerPage_formRegister button {
     width: 90%;
     max-width: 260px;
@@ -43,7 +56,8 @@
     background: #5F15AD;
     border-radius: 8px;
     padding: 5px 15px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    font-size: 11px; }
   .registerPage_show {
     font-size: 11px;
     color: #1DAD4B;
@@ -51,12 +65,15 @@
     text-align: end;
     border-bottom: 1px solid #1DAD4B; }
   .registerPage_singInGoogle {
+    padding-bottom: 5px;
+    gap: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row; }
   .registerPage_singInGoogle--logo {
-    width: 10%; }
+    width: 15%;
+    max-width: 35px; }
   .registerPage_singInGoogle--text {
     font-size: 11px;
     color: #1DAD4B; }
@@ -69,5 +86,54 @@
     font-size: 11px;
     color: #1DAD4B; }
   .registerPage_singIn--text {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700; }
+
+@media (min-width: 750px) {
+  .registerPage_welcome--box {
+    padding-bottom: 25px; }
+  .registerPage_welcome {
+    font-size: 36px; }
+  .registerPage_msg {
+    font-size: 16px; }
+  .registerPage_logo {
+    max-width: 65px; }
+  .registerPage_formRegister {
+    padding-bottom: 40px; }
+  .registerPage_formRegister input {
+    min-height: 30px;
+    max-width: 280px; }
+  .registerPage_formRegister input::placeholder {
+    font-size: 13px; }
+  .registerPage_formRegister button {
+    min-height: 30px;
+    max-width: 280px;
+    font-size: 14px; } }
+
+@media (min-width: 1024px) {
+  .registerPage_welcome--box {
+    padding-bottom: 30px; }
+  .registerPage_welcome {
+    font-size: 38px; }
+  .registerPage_msg {
+    font-size: 18px; }
+  .registerPage_logo {
+    max-width: 80px; }
+  .registerPage_formRegister {
+    padding-bottom: 45px;
+    gap: 15px; }
+  .registerPage_formRegister input {
+    min-height: 35px;
+    max-width: 300px; }
+  .registerPage_formRegister input::placeholder {
+    font-size: 15px; }
+  .registerPage_formRegister button {
+    min-height: 35px;
+    max-width: 300px;
+    font-size: 18px; }
+  .registerPage_singInGoogle--text {
+    font-size: 12px; }
+  .registerPage_singIn--click {
+    font-size: 12px; }
+  .registerPage_singIn--text {
+    font-size: 12px; } }

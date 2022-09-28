@@ -2,12 +2,23 @@
 
 .registerPage{
     width: 100%;
+    max-width: 600px;
     height: 100vh;
+    position: relative;
     @include flex-column-center;
-    gap: 20px;
+
+    &_home{
+        width: 8%;
+        max-width: 35px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
 
     &_welcome--box{
         @include flex-column-row;
+        padding-bottom: 20px;
+        gap: 5px;
     }
 
     &_welcome{
@@ -16,13 +27,14 @@
 
     &_logo{
         width: 20%;
+        max-width: 50px;
     }
     
     &_formRegister {
         width: 80%;
-        // margin-top: 20px;
+        padding-bottom: 35px;
+        gap: 10px;
         @include flex-column-center;
-        gap: 20px;
     }
     
     &_formRegister input {
@@ -32,10 +44,13 @@
     &_formRegister input::placeholder{
         color: $primary-color;
         font-size: 11px;
+        font-style: italic;
+        text-align: start;
     }
     
     &_formRegister button {
-        @include button
+        @include button;
+        font-size: 11px;
     }
 
     &_show{
@@ -46,12 +61,14 @@
     }
 
     &_singInGoogle {
+        padding-bottom: 5px;
+        gap:5px;
         @include flex-column-row;
-        // gap: 10px;
     }
 
     &_singInGoogle--logo{
-        width: 10%;
+        width: 15%;
+        max-width: 35px;
     }
 
     &_singInGoogle--text{
@@ -66,7 +83,98 @@
         @include textGreen;
     }
     &_singIn--text{
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
+    }
+}
+
+@media (min-width: 750px) {
+    .registerPage{
+        &_welcome--box{
+            padding-bottom: 25px;
+        }
+        
+        &_welcome{
+            font-size: 36px;
+        }
+
+        &_msg{
+            font-size: 16px;
+        }
+
+        &_logo{
+            max-width: 65px;
+        }
+
+        &_formRegister {
+            padding-bottom: 40px;
+        }
+
+        &_formRegister input {
+            min-height: 30px;
+            max-width: 280px;
+        }
+
+        &_formRegister input::placeholder{
+            font-size: 13px;
+        }
+
+        &_formRegister button {
+            min-height: 30px;
+            max-width: 280px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .registerPage{
+        &_welcome--box{
+            padding-bottom: 30px;
+        }
+
+        &_welcome{
+            font-size: 38px;
+        }
+
+        &_msg{
+            font-size: 18px;
+        }
+
+        &_logo{
+            max-width: 80px;
+        }
+
+        &_formRegister {
+            padding-bottom: 45px;
+            gap: 15px;
+        }
+
+        &_formRegister input {
+            min-height: 35px;
+            max-width: 300px;
+        }
+
+        &_formRegister input::placeholder{
+            font-size: 15px;
+        }
+
+        &_formRegister button {
+            min-height: 35px;
+            max-width: 300px;
+            font-size: 18px;
+        }
+
+        &_singInGoogle--text{
+            font-size: 12px;
+        }
+    
+        &_singIn--click{
+            font-size: 12px;
+        }
+
+        &_singIn--text{
+            font-size: 12px;
+        }
     }
 }
