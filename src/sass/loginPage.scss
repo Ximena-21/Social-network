@@ -4,15 +4,23 @@
     width: 100%;
     max-width: 600px;
     height: 100vh;
+    position: relative;
     @include flex-column-center;
-    gap: 20px;
+
+    &_home{
+        width: 8%;
+        max-width: 35px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
 
     &_welcome{
         color: $primary-color;
+        padding-bottom: 20px;
     }
 
     &_msg{
-        // margin: 20px 0px 20px;
         color: $secundary-color;
         font-size: 16px;
     }
@@ -20,34 +28,42 @@
     &_logo{
         width: 40%;
         max-width: 180px;
+        padding: 20px 0;
     }
     
     &_formSingIn {
         width: 80%;
-        // margin-top: 20px;
+        padding-bottom: 35px;
+        gap: 10px;
         @include flex-column-center;
-        gap: 20px;
     }
     
     &_formSingIn input {
         @include input
+            /* max-height: 50px;*/
     }
     
     &_formSingIn input::placeholder{
         color: $primary-color;
         font-size: 11px;
+        font-style: italic;
+        text-align: start;
     }
     
     &_formSingIn button {
-        @include button
+        @include button;
+        font-size: 11px;
     }
+
     &_singInGoogle {
+        padding-bottom: 5px;
+        gap:5px;
         @include flex-column-row;
-        // gap: 10px;
     }
 
     &_singInGoogle--logo{
         width: 10%;
+        max-width: 35px;
     }
 
     &_singInGoogle--text{
@@ -57,7 +73,92 @@
         @include textGreen;
     }
     &_singUp--text{
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
+    }
+}
+
+@media (min-width: 750px) {
+    .loginPage{
+        &_welcome{
+            font-size: 36px;
+            padding-bottom: 25px;
+        }
+
+        &_msg{
+            font-size: 16px;
+        }
+
+        &_logo{
+            max-width: 190px;
+            padding: 25px 0;
+        }
+
+        &_formSingIn {
+            padding-bottom: 40px;
+        }
+
+        &_formSingIn input {
+            min-height: 30px;
+            max-width: 280px;
+        }
+
+        &_formSingIn input::placeholder{
+            font-size: 13px;
+        }
+
+        &_formSingIn button {
+            min-height: 30px;
+            max-width: 280px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .loginPage{
+        &_welcome{
+            font-size: 38px;
+            padding-bottom: 30px;
+        }
+
+        &_msg{
+            font-size: 18px;
+        }
+
+        &_logo{
+            max-width: 200px;
+            padding: 30px 0;
+        }
+
+        &_formSingIn {
+            padding-bottom: 45px;
+            gap: 15px;
+        }
+
+        &_formSingIn input {
+            min-height: 35px;
+            max-width: 300px;
+        }
+
+        &_formSingIn input::placeholder{
+            font-size: 15px;
+        }
+
+        &_formSingIn button {
+            min-height: 35px;
+            max-width: 300px;
+            font-size: 18px;
+        }
+
+        &_singInGoogle--text{
+            font-size: 12px;
+        }
+        &_singUp--register{
+            font-size: 12px;
+        }
+        &_singUp--text{
+            font-size: 12px;
+        }
     }
 }

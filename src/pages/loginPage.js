@@ -7,6 +7,7 @@ function createLoginPage () {
     loginPageContainer.className = "loginPage"
 
     loginPageContainer.innerHTML = `
+        <img src="../img/home.png" alt="home icon" class="loginPage_home">
         <h1 class="loginPage_welcome">Bienvenidos</h1>
         <h5 class="loginPage_msg">Haz parte de esta comunidad</h5>
         <img src="../img/logoKnitters.png" alt="logo Knitters" class="loginPage_logo">

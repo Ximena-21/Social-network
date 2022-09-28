@@ -24,25 +24,28 @@ $tertiary-color: #1DAD4B;
 
 @mixin input {
     width: 90%;
-    height: 40px;
+    max-width: 260px;
+    min-height: 20px;
+    max-height: 40px;
     border: $primary-color solid 1px;
     background: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: start;
+    padding: 5px 15px;
+    border-radius: 8px;
 }
+
 @mixin button {
     width: 90%;
-    height: 40px;
+    max-width: 260px;
+    min-height: 20px;
+    max-height: 40px;
     border: $primary-color solid 1px;
     background: $primary-color;
-    border-radius: 10px;
-    // text-align: center;
-    padding: 0 40px;
+    border-radius: 8px;
+    padding: 5px 15px;
     color: #FFFFFF;
 }
 @mixin textGreen {
-    font-size: 12px;
+    font-size: 11px;
     color: $tertiary-color;
 }
 
