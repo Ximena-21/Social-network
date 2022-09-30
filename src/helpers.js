@@ -1,13 +1,17 @@
 import { createLandingPage } from "./pages/landingPage.js"
 import { createLoginPage } from "./pages/loginPage.js"
+import { createProfilePage } from "./pages/profilePage.js"
 import { createRegisterPage } from "./pages/registerPage.js"
+import { createWallPage } from "./pages/wallPage.js"
 
 const root = document.getElementById('root')
 
 const routes = {
     '/' : createLandingPage,
     '/login' : createLoginPage,
-    '/register': createRegisterPage
+    '/register': createRegisterPage,
+    '/wall': createWallPage,
+    '/profile': createProfilePage
 }
 
 
