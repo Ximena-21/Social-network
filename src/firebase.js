@@ -34,3 +34,6 @@
             console.log(user)
         }
     })
+
+    //faltar terminara demas funciopnes firebase
+    
