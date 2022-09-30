@@ -38,19 +38,34 @@
     }
     
     &_formRegister input {
-        @include input
-    }
-    
-    &_formRegister input::placeholder{
-        color: $primary-color;
-        font-size: 11px;
-        font-style: italic;
-        text-align: start;
+        @include input;
+        outline: none;
+
+        &:focus {
+            background-color: #fbf7f0;
+            border: 1px solid $secundary-color;
+            color:$primary-color;
+        }
+
+        &:active {
+            box-shadow:  3px -3px 10px #fbcf8d,
+			//3px -3px 30px #F7990F,
+			//3px -3px 30px #F7990F, 
+			-3px 3px 10px #ee9f27;
+        }
+
+        &::placeholder{
+            color: $primary-color;
+            font-size: 11px;
+            font-style: italic;
+            text-align: start;
+        }
     }
     
     &_formRegister button {
         @include button;
         font-size: 11px;
+        margin-top: 40px;
     }
 
     &_show{
@@ -73,6 +88,7 @@
 
     &_singInGoogle--text{
         @include textGreen;
+        cursor: pointer;
     }
 
     &_singIn{
@@ -81,10 +97,24 @@
 
     &_singIn--click{
         @include textGreen;
+        cursor: pointer;
     }
     &_singIn--text{
         font-size: 11px;
         font-weight: 700;
+    }
+}
+
+.inputPassword{
+    width: 100%;
+    max-width: 294px;
+    @include flex-column-row;
+    position: relative;
+
+    &_eye{
+        width: 20px;
+        position: absolute;
+        right: 20px;
     }
 }
 
@@ -123,6 +153,13 @@
             min-height: 30px;
             max-width: 280px;
             font-size: 14px;
+        }
+    }
+
+    .inputPassword{
+        max-width: 315px;
+        &_eye{
+            right: 25px;
         }
     }
 }
@@ -175,6 +212,13 @@
 
         &_singIn--text{
             font-size: 12px;
+        }
+    }
+
+    .inputPassword{
+        max-width: 340px;
+        &_eye{
+            right: 30px;
         }
     }
 }

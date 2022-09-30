@@ -15,8 +15,10 @@ function createRegisterPage () {
         <form id="form" class="registerPage_formRegister">
             <input required type="text" name="name" placeholder="Nombre" id="name">
             <input required type="email" name="email" placeholder="Email" id="email">
-            <input required type="text" name="password" placeholder="Contraseña" id="password">
-            <span class="registerPage_show">Mostrar</span>
+            <div class="inputPassword"> 
+                <input required type="password" name="password" placeholder="Contraseña" id="password">
+                <img src="../img/eye.png" alt="eye" class="inputPassword_eye">
+            </div>
             <button type="submit" class="registerPage_btn" id="btn">Registrarse</button>
         </form>
 

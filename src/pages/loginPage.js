@@ -14,7 +14,10 @@ function createLoginPage () {
         
         <form id="form" class="loginPage_formSingIn">
             <input required type="email" name="email" placeholder="Tu Email" id="email">
-            <input required type="text" name="password" placeholder="Tu Contraseña" id="password">
+            <div class="inputPassword"> 
+                <input required type="password" name="password" placeholder="Tu Contraseña" id="password">
+                <img src="../img/eye.png" alt="eye" class="inputPassword_eye">
+            </div>
             <button type="submit" class="loginPage_btnSinIn" id="btnSingIn">Iniciar sesión</button>
         </form>
 
@@ -32,17 +35,26 @@ function createLoginPage () {
     const btnSingIn = loginPageContainer.querySelector('#btnSingIn')
     console.log(btnSingIn)
     btnSingIn.addEventListener('click', () => {
-        console.log('el boton sirve')
+        console.log('iniciar sesion')
+        onNavigate('/wall')
     })
 
-    loginPageContainer.querySelector('#singInGoogle').addEventListener('click', () => {
+    loginPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {
         console.log('iniciar sesion con google')
+        event.preventDefault()
+        onNavigate('/profile')
     })
 
     loginPageContainer.querySelector('#register').addEventListener('click', (event) => {
         console.log('llevar a formulario de registro')
         event.preventDefault()
         onNavigate('/register')
+
+    })
+
+    loginPageContainer.querySelector('.loginPage_home').addEventListener('click', (event) => {
+        console.log('llevar a landingPge')
+        onNavigate('/')
 
     })
 
