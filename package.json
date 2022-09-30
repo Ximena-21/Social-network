@@ -2,6 +2,7 @@
   "name": "social-network",
   "version": "1.0.0",
   "description": "Social Network @ Laboratoria",
+  "type": "module",
   "main": "src/index.html",
   "keywords": [
     "javascript",
