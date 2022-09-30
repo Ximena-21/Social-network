@@ -1,0 +1,225 @@
+.landingPage {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .landingPage_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    background-color: #fff; }
+  .landingPage_header--icon {
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    color: #5F15AD; }
+  .landingPage_header--logo {
+    width: 20%;
+    height: 50px;
+    max-width: 80px; }
+  .landingPage_header--sing {
+    width: 25%;
+    font-size: 12px;
+    font-weight: 300;
+    background-color: #fff;
+    color: #5F15AD;
+    border: none;
+    font-family: sans-serif; }
+  .landingPage_main {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px; }
+  .landingPage_main--welcomeBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 20px; }
+  .landingPage_footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+
+.welcomeBox_container {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px; }
+
+.welcomeBox_tittle {
+  width: 40%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5F15AD;
+  text-align: center;
+  font-size: 28px; }
+
+.welcomeBox_text {
+  text-align: center;
+  color: #F7990F;
+  width: 40%;
+  max-width: 280px;
+  justify-content: center;
+  align-items: center; }
+
+.welcomeBox_button {
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #1DAD4B; }
+
+.welcomeBox_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 600px; }
+
+.advantage_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.advantage_section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px; }
+
+.advantage_section--img {
+  width: 15%;
+  height: 30px; }
+
+.advantage_section--h2 {
+  font-size: 14px;
+  color: #BE7100; }
+
+.about_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px; }
+
+.about_tittle {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5F15AD;
+  text-align: center;
+  font-size: 28px; }
+
+.about_text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  max-width: 280px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  font-size: 16px; }
+
+.about_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 600px; }
+
+.footer {
+  background-color: #fff; }
+  .footer_redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 750;
+    height: 40px;
+    justify-content: space-around;
+    border-bottom: 1px solid #5F15AD; }
+  .footer_logo {
+    max-width: 750px; }
+  .footer_img {
+    max-width: 30px;
+    height: 30px;
+    margin-left: 10px; }
+  .footer_img--logo {
+    max-width: 100px;
+    height: 40px;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .footer_autor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 220px;
+    height: 40px;
+    font-size: 12px;
+    color: rgba(95, 21, 173, 0.56); }
+
+@media (min-width: 750px) {
+  .landingPage_header {
+    max-width: 750px; }
+  .welcomeBox_tittle {
+    width: 60%; }
+  .welcomeBox_text {
+    width: 40%;
+    max-width: 280px;
+    height: 90px; }
+  .advantage_section--img {
+    max-width: 40px;
+    height: 40px; }
+  .advantage_section--h2 {
+    font-size: 16px; }
+  .about_text {
+    max-width: 380px; }
+  .footer
+_img--logo {
+    margin-left: 100%; }
+  .autor {
+    max-width: 400px; } }
+
+@media (min-width: 1024px) {
+  .landingPage_header {
+    max-width: 1220px;
+    height: 70px; }
+  .landingPage_main--welcomeBOx {
+    max-width: 800px;
+    flex-direction: row-reverse; } }
