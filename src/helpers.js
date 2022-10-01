@@ -28,6 +28,7 @@ function onNavigate (pathName) {
     root.appendChild(pageRender) 
 }
 
+
 export {
     onNavigate
 }

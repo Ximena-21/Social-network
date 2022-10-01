@@ -1,3 +1,4 @@
+import { singIn } from "../firebase.js"
 import { onNavigate } from "../helpers.js"
 
 
@@ -15,7 +16,7 @@ function createLoginPage () {
         <form id="form" class="loginPage_formSingIn">
             <input required type="email" name="email" placeholder="Tu Email" id="email">
             <div class="inputPassword"> 
-                <input required type="password" name="password" placeholder="Tu Contraseña" id="password">
+                <input required type="password" name="password" placeholder="Tu Contraseña" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,13}">
                 <img src="../img/eye.png" alt="eye" class="inputPassword_eye">
             </div>
             <button type="submit" class="loginPage_btnSinIn" id="btnSingIn">Iniciar sesión</button>
@@ -36,7 +37,10 @@ function createLoginPage () {
     console.log(btnSingIn)
     btnSingIn.addEventListener('click', () => {
         console.log('iniciar sesion')
-        onNavigate('/wall')
+        singIn().then(()=>{
+            console.log('inicio sesion')
+        })
+        //onNavigate('/wall')
     })
 
     loginPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {

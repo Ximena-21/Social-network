@@ -1,3 +1,4 @@
+import { registerUser } from "../firebase.js"
 import { onNavigate } from "../helpers.js"
 
 function createRegisterPage () {
@@ -16,10 +17,10 @@ function createRegisterPage () {
             <input required type="text" name="name" placeholder="Nombre" id="name">
             <input required type="email" name="email" placeholder="Email" id="email">
             <div class="inputPassword"> 
-                <input required type="password" name="password" placeholder="Contraseña" id="password">
+                <input required type="password" name="password" placeholder="Contraseña" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,13}">
                 <img src="../img/eye.png" alt="eye" class="inputPassword_eye">
             </div>
-            <button type="submit" class="registerPage_btn" id="btn">Registrarse</button>
+            <button class="registerPage_btn" id="btn">Registrarse</button>
         </form>
 
         <div class="registerPage_singInGoogle">
@@ -32,19 +33,23 @@ function createRegisterPage () {
             <a href="" class="registerPage_singIn--click" id='clickSingIn'>click aquí</a>
         </div>
     `
-
+    // const name = registerPageContainer.querySelector('#name').value
+    // const email = registerPageContainer.querySelector('#email').value
+    // const password = registerPageContainer.querySelector('#password').value
+ 
     const btnRegister = registerPageContainer.querySelector('#btn')
-    console.log(btnRegister)
     btnRegister.addEventListener('click', () => {
-        console.log('el boton sirve se va a registrar')
+        registerUser()
+        onNavigate('/login')
+        
     })
 
-    registerPageContainer.querySelector('#singInGoogle').addEventListener('click', () => {
+    registerPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {
+        event.preventDefault()
         console.log('iniciar sesion con google')
     })
 
     registerPageContainer.querySelector('#clickSingIn').addEventListener('click', (event) => {
-        console.log('llevar a formulario de registro')
         event.preventDefault()
         onNavigate('/login')
 
@@ -52,6 +57,7 @@ function createRegisterPage () {
 
     return registerPageContainer
 }
+
 
 export {
     createRegisterPage
