@@ -1,0 +1,89 @@
+.wallPage {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative; }
+  .wallPage_headerBox {
+    width: 100%;
+    max-width: 700px;
+    min-height: 50px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #ECE7F1;
+    position: fixed;
+    top: 0; }
+  .wallPage_logo {
+    width: 50px; }
+  .wallPage_menuHidden {
+    width: 30px; }
+  .wallPage_wallPost {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 60px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .wallPage_footerMenu {
+    width: 100%;
+    max-width: 750px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 70px;
+    background: #3B007A;
+    position: fixed;
+    bottom: 0; }
+  .wallPage_footerMenu--icon {
+    width: 20px; }
+
+.postContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: #d9d9d9 0px 3px 12px; }
+  .postContainer_headerPost {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 10px; }
+  .postContainer_userBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px; }
+  .postContainer_user {
+    width: 20px; }
+  .postContainer_userName {
+    font-size: 14px;
+    color: #5F15AD;
+    font-weight: 600;
+    font-style: italic; }
+  .postContainer_interactionBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px; }
+  .postContainer_icon {
+    width: 20px;
+    height: 20px; }
+  .postContainer_postImage--img {
+    width: 100%;
+    padding-bottom: 5px; }

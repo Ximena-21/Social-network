@@ -37,10 +37,10 @@ function createLoginPage () {
     console.log(btnSingIn)
     btnSingIn.addEventListener('click', () => {
         console.log('iniciar sesion')
-        singIn().then(()=>{
-            console.log('inicio sesion')
-        })
-        //onNavigate('/wall')
+        // singIn().then(()=>{
+        //     console.log('inicio sesion')
+        // })
+        onNavigate('/wall')
     })
 
     loginPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {

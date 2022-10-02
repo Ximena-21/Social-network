@@ -1,0 +1,125 @@
+@import './generics.scss';
+
+.wallPage{
+    width: 100%;
+    max-width: 750px;
+    @include flex-column-center;
+    position: relative;
+
+    &_headerBox {
+        width: 100%;
+        max-width: 700px;
+        min-height: 50px;
+        padding: 0 10px;
+        @include flex-column-row;
+        justify-content: space-between;
+        background: #ECE7F1;
+        position: fixed;
+        top: 0;
+    }
+
+    &_logo{
+        width: 50px;
+    }
+
+    &_menuHidden{
+        width: 30px;
+    }
+
+    &_wallPost{
+        width: 100%;
+        max-width: 700px;
+        margin-top: 60px;
+        gap: 20px;
+        @include flex-column-center;
+    }
+    &_footerMenu{
+        width: 100%;
+        max-width: 750px;
+        min-height: 50px;
+        @include flex-column-row;
+        gap: 70px;
+        background: #3B007A;
+        position: fixed;
+        bottom: 0;
+    }
+
+    &_footerMenu--icon{
+        width: 20px;
+    }
+
+}
+
+.postContainer{
+    width: 100%;
+    @include flex-column-center;
+    // /* gap: 30px; */
+    // /* border-radius: 10px; */
+    // /* padding: 20px; */
+    box-shadow: rgb(217, 217, 217) 0px 3px 12px;
+
+    &_headerPost{
+        width: 100%;
+        @include flex-column-row;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+    &_userBox{
+        @include flex-column-row;
+        gap:5px;
+    }
+    &_user{
+        width: 20px;
+    }
+    &_userName{
+        font-size: 14px;
+        color: $primary-color;
+        font-weight: 600;
+        font-style: italic;
+    }
+    &_interactionBox{
+        @include flex-column-row;
+        gap: 5px;
+    }
+    &_icon{
+        width: 20px;
+        height: 20px;
+    }
+    &_postImage--img{
+        width: 100%;
+        //height: 200px;
+       //border-radius: 8px;
+        padding-bottom: 5px;
+    }
+}
+
+//otros estilos como instagram
+// .postContainer {
+//       width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // flex-direction: column;
+    // /* gap: 30px; */
+    // /* border-radius: 10px; */
+    // /* padding: 20px; */
+    // box-shadow: #d9d9d9 0px 3px 10px;
+// }
+
+// .postContainer_headerPost {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     padding: 5px 10px;
+// }
+
+
+// .postContainer_postImage--img {
+//     width: 100%;
+//     /* height: 200px; */
+//     /* border-radius: 8px; */
+//      padding-bottom: 5px;
+// }
