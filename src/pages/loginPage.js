@@ -1,4 +1,4 @@
-import { singIn } from "../firebase.js"
+import { singIn } from "../firebase/authentication.js"
 import { onNavigate } from "../helpers.js"
 
 
@@ -33,15 +33,25 @@ function createLoginPage () {
         </div>
     `
 
-    const btnSingIn = loginPageContainer.querySelector('#btnSingIn')
-    console.log(btnSingIn)
-    btnSingIn.addEventListener('click', () => {
-        console.log('iniciar sesion')
-        // singIn().then(()=>{
-        //     console.log('inicio sesion')
-        // })
-        onNavigate('/wall')
+    const email = loginPageContainer.querySelector('#email')
+    const password = loginPageContainer.querySelector('#password')
+
+
+    loginPageContainer.querySelector('#form').addEventListener('submit',(e)=>{
+        e.preventDefault()
+        console.log('me estoy logueando')
+        singIn(email.value, password.value).then((result)=>{
+
+            if(result.error){
+                alert(errorsDict[result.error] || '404 error')
+                return 
+            }
+
+            onNavigate('/wall')
+        })
+
     })
+
 
     loginPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {
         console.log('iniciar sesion con google')
@@ -64,6 +74,11 @@ function createLoginPage () {
 
     return loginPageContainer
 }
+
+const errorsDict = {
+    'auth/user-not-found': 'El usuario no esta registrado',
+  }
+
 
 export {
     createLoginPage

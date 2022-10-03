@@ -1,4 +1,4 @@
-import { registerUser } from "../firebase.js"
+import { registerUser } from "../firebase/authentication.js"
 import { onNavigate } from "../helpers.js"
 
 function createRegisterPage () {
@@ -33,16 +33,33 @@ function createRegisterPage () {
             <a href="" class="registerPage_singIn--click" id='clickSingIn'>click aquí</a>
         </div>
     `
-    // const name = registerPageContainer.querySelector('#name').value
-    // const email = registerPageContainer.querySelector('#email').value
-    // const password = registerPageContainer.querySelector('#password').value
+    const name = registerPageContainer.querySelector('#name')
+    const email = registerPageContainer.querySelector('#email')
+    const password = registerPageContainer.querySelector('#password')
  
-    const btnRegister = registerPageContainer.querySelector('#btn')
-    btnRegister.addEventListener('click', () => {
-        registerUser()
-        onNavigate('/login')
-        
+    // const btnRegister = registerPageContainer.querySelector('#btn')
+
+    const formRegister = registerPageContainer.querySelector('#form')
+
+
+    formRegister.addEventListener('submit',(e)=>{
+
+        e.preventDefault()
+
+        console.log('emitiendo la data')
+
+        registerUser(name.value, email.value,password.value).then(()=>{
+            console.log('MOVERME ACA')
+            // onNavigate('/login')
+        })
+
     })
+    
+    // btnRegister.addEventListener('click', (e) => {
+    //     e.preventDefault()
+
+        
+    // })
 
     registerPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {
         event.preventDefault()

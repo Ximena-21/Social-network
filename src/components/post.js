@@ -1,6 +1,6 @@
 import { dataPost } from "./dataPost.js"
 
-const post = (userPost) => {
+const Post = (userPost) => {
     const postContainer = document.createElement('div')
     postContainer.className = 'postContainer'
 
@@ -8,7 +8,7 @@ const post = (userPost) => {
         <div class="postContainer_headerPost">
             <div class="postContainer_userBox">
                 <img src="../img/avatar.png" alt="" class="postContainer_user">
-                <span class="postContainer_userName">${userPost.userName}</span>
+                <span class="postContainer_userName">${userPost.emailUser}</span>
             </div>
             <div class="postContainer_interactionBox">
                 <img src="../img/commet.png" alt="comment" class="postContainer_icon" id= "comment">
@@ -16,29 +16,14 @@ const post = (userPost) => {
             </div>
         </div>
         <div class="postContainer_postImage">
-            <img src="${userPost.post}" alt="imgPost" class="postContainer_postImage--img">
+            <img src="${userPost.image}" alt="imgPost" class="postContainer_postImage--img">
         </div>
     `
 
     return postContainer
 }
 
-function renderPost (container) {
-    const data = dataPost
-    const containerPost = container
-
-    console.log(data)
-    data.forEach(user => {
-        console.log(user.userName)
-        const postUser = post(user)
-        containerPost.appendChild(postUser)
-        console.log(post(user))
-    });
-
-    return
-}
 
 export {
-    post,
-    renderPost
+    Post,
 }

@@ -1,6 +1,5 @@
-import { renderPost } from "../components/post.js";
-import { sideMenu } from "../components/sideMenu.js";
-import { onNavigate } from "../helpers.js";
+import { Post } from "../components/post.js";
+import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
 
 const createWallPage = () =>{
 
@@ -27,7 +26,7 @@ const createWallPage = () =>{
     //wallPageContainer.querySelector('.wallPage_headerBox sideMenu').appendChild(sideMenu())
     const postContainer = wallPageContainer.querySelector('.wallPage_wallPost')
     //.appendChild(post())
-    const post = renderPost(postContainer)
+    // const post = renderPost(postContainer)
 
 
     // console.log({
@@ -35,6 +34,28 @@ const createWallPage = () =>{
     //     'cntenedor': postContainer
     // })
     //postContainer.appendChild(post)
+
+    getMyPosts().then(datos=>{
+        console.log(datos,'my posts')
+    })
+
+    //ejecuto la funcion que se subscribe y me ejecutara este callback cada que algo cambie.
+    subscribeToRealTimePosts((posts)=>{
+
+        postContainer.innerHTML = ''
+
+        posts.forEach(post => {
+            const postUser = Post(post)
+
+            if(post.time){
+
+                console.log(post.time.toDate())
+            }
+
+            postContainer.appendChild(postUser)
+        });
+
+    })
 
     return wallPageContainer
 }
