@@ -8,15 +8,17 @@ function createLandingPage () {
     landingPageContainer.innerHTML = `
     <header class='landingPage_header'>
         <nav class=" landingPage_header--nav nav">
-            <img src="../img/K__1_-removebg-preview 2.png" alt="" class="nav_logo"/>
-            <button class="nav_abrirMenu" aria-label="Abrir menu">
-                <img src="img/menu.png" alt="abrir menu">
-            </button>
-            <ul class="nav_menu menu">
-                <button class="nav_menu--cerrarMenu" aria-label="Cerrar menu">
-                    <img height="33" width="33" src="img/cerrar_menu.png" alt="cerrar menu">
+            <div class="nav_menuLogo">
+                <img src="../img/K__1_-removebg-preview 2.png" alt="" class="nav_menuLogo--img"/>
+                <button class="nav_menuLogo--abrirMenu abrirMenu menuAbierto" aria-label="Abrir menu">
+                    <img src="../img/Group 6.png" alt="abrir menu">
                 </button>
-                <li><a href="#inicio">Inicio</a></li>
+            </div>
+            <ul class="nav_menu menu">
+                <button class="menu_cerrarMenu cerrarMenu" aria-label="Cerrar menu">
+                    <img height="33" width="33" src="../img/cerrar_menu.png" alt="cerrar menu">
+                </button>
+                <li class="menu_li"><a href="#inicio">Inicio</a></li>
                 <li><a href="#ventajas">Ventajas</a></li>
                 <li><a href="#quienesSomos">Quienes Somos</a></li>
                 <li><a href="#Contacto">Contacto</a></li>
@@ -102,15 +104,15 @@ export {
 }
 
 
-let menu = document.querySelector(".menu")
-let abrir_menu_b = document.querySelector(".abrir_menu")
-let cerrar_menu_b = document.querySelector(".cerrar_menu")
+let menu = document.querySelector('.menu');
+let abrir_menu_b = document.querySelector('.abrirMenu');
+let cerrar_menu_b = document.querySelector('.cerrarMenu');
 
 //funcion que abra y cierre
 function toggleMenu() {
-    menu.classList.toggle("menu_abierto")
+    menu.classList.toggle("menu_abierto");
 }
 
-//evento a la funcion o ejecutar
-abrir_menu_b.addEventListener("click",toggleMenu);
-cerrar_menu_b.addEventListener("click",toggleMenu);
+// //evento a la funcion o ejecutar
+// abrir_menu_b.("click",toggleMenu);
+// cerrar_menu_b.addEventListener("click",toggleMenu);
