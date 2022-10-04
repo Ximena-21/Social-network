@@ -2,6 +2,15 @@ const dataPost = [
     {
         emailUser: 'Usuario 1',
         image: '../img/imgPost/IMG_20200307_113335.jpg',
+        time: '',
+        idFirebase: '',
+        comment: [
+            {
+                idUSer: '',
+                text: '',
+                usuario: '',
+            }
+        ]
     },
     {
         emailUser: 'Usuario 2',

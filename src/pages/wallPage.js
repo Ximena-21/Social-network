@@ -1,4 +1,4 @@
-import { Post } from "../components/post.js";
+import { Post } from "../components/postcomponent.js";
 import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
 
 const createWallPage = () =>{
@@ -45,14 +45,14 @@ const createWallPage = () =>{
         postContainer.innerHTML = ''
 
         posts.forEach(post => {
-            const postUser = Post(post)
+            const postUser = Post(post) //retirnar cada post pintado
 
             if(post.time){
 
                 console.log(post.time.toDate())
             }
 
-            postContainer.appendChild(postUser)
+            postContainer.appendChild(postUser) // todos los post se pintan
         });
 
     })

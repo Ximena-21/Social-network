@@ -94,7 +94,7 @@ function registerUser(name='',email='',password='') {
 
       const user = registeredUser.user
       console.log('la cuenta fue creada con exito', user)
-      // return logout()
+      return logout()
     })
     .then(() => {
       // sendEmailVerification(auth.currentUser)

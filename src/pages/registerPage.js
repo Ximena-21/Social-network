@@ -50,7 +50,7 @@ function createRegisterPage () {
 
         registerUser(name.value, email.value,password.value).then(()=>{
             console.log('MOVERME ACA')
-            // onNavigate('/login')
+            onNavigate('/login')
         })
 
     })

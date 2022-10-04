@@ -43,7 +43,7 @@ function subscribeToRealTimePosts (callback) {
     return unsub
 }
 
-
+//perfil .... 
 function getMyPosts (idUser){
     
     const postsRef = collection(db,'posts')
