@@ -14,23 +14,12 @@
     height: 50px;
     justify-content: space-between;
     background-color: #fff; }
-  .landingPage_header--icon {
-    justify-content: center;
+  .landingPage_header--nav {
+    display: flex;
     align-items: center;
-    margin-left: 20px;
-    color: #5F15AD; }
-  .landingPage_header--logo {
-    width: 20%;
-    height: 50px;
-    max-width: 80px; }
-  .landingPage_header--sing {
-    width: 25%;
-    font-size: 12px;
-    font-weight: 300;
-    background-color: #fff;
-    color: #5F15AD;
-    border: none;
-    font-family: sans-serif; }
+    justify-content: center;
+    flex-direction: column;
+    width: 90%; }
   .landingPage_main {
     width: 80%;
     max-width: 600px;

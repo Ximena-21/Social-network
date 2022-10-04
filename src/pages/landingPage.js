@@ -7,11 +7,24 @@ function createLandingPage () {
 
     landingPageContainer.innerHTML = `
     <header class='landingPage_header'>
-        <i class="fa-solid fa-bars landingPage_header--icon" "></i>
-        <img src="../img/K__1_-removebg-preview 2.png" alt="" class="landingPage_header--logo"/>
-        <button class='singIn landingPage_header--sing'>Iniciar sesión</button>
+        <nav class=" landingPage_header--nav nav">
+            <img src="../img/K__1_-removebg-preview 2.png" alt="" class="nav_logo"/>
+            <button class="nav_abrirMenu" aria-label="Abrir menu">
+                <img src="img/menu.png" alt="abrir menu">
+            </button>
+            <ul class="nav_menu menu">
+                <button class="nav_menu--cerrarMenu" aria-label="Cerrar menu">
+                    <img height="33" width="33" src="img/cerrar_menu.png" alt="cerrar menu">
+                </button>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ventajas">Ventajas</a></li>
+                <li><a href="#quienesSomos">Quienes Somos</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+            <button class='singIn nav_sing'>Iniciar sesión</button>
+        </nav>
     </header>
-    <section class="landingPage_main">
+    <section id="inicio" class="landingPage_main">
         <div class="landingPage_main--welcomeBox welcomeBox">
             <div class="welcomeBox_container">
                 <h1 class="welcomeBox_tittle">Tejiendo Comunidad</h1>
@@ -83,7 +96,21 @@ function createLandingPage () {
     return landingPageContainer
 }
 
+
 export {
     createLandingPage
 }
 
+
+let menu = document.querySelector(".menu")
+let abrir_menu_b = document.querySelector(".abrir_menu")
+let cerrar_menu_b = document.querySelector(".cerrar_menu")
+
+//funcion que abra y cierre
+function toggleMenu() {
+    menu.classList.toggle("menu_abierto")
+}
+
+//evento a la funcion o ejecutar
+abrir_menu_b.addEventListener("click",toggleMenu);
+cerrar_menu_b.addEventListener("click",toggleMenu);
