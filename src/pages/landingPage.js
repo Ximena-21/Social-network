@@ -10,7 +10,7 @@ function createLandingPage () {
         <nav class=" landingPage_header--nav nav">
             <div class="nav_menuLogo">
                 <img src="../img/K__1_-removebg-preview 2.png" alt="" class="nav_menuLogo--img"/>
-                <button class="nav_menuLogo--abrirMenu abrirMenu menuAbierto" aria-label="Abrir menu">
+                <button class="nav_menuLogo--abrirMenu abrirMenu " aria-label="Abrir menu">
                     <img src="../img/Group 6.png" alt="abrir menu">
                 </button>
             </div>
@@ -18,7 +18,7 @@ function createLandingPage () {
                 <button class="menu_cerrarMenu cerrarMenu" aria-label="Cerrar menu">
                     <img height="33" width="33" src="../img/cerrar_menu.png" alt="cerrar menu">
                 </button>
-                <li class="menu_li"><a href="#inicio">Inicio</a></li>
+                <li class=""><a href="#inicio">Inicio</a></li>
                 <li><a href="#ventajas">Ventajas</a></li>
                 <li><a href="#quienesSomos">Quienes Somos</a></li>
                 <li><a href="#Contacto">Contacto</a></li>
@@ -99,10 +99,6 @@ function createLandingPage () {
 }
 
 
-export {
-    createLandingPage
-}
-
 
 let menu = document.querySelector('.menu');
 let abrir_menu_b = document.querySelector('.abrirMenu');
@@ -112,6 +108,24 @@ let cerrar_menu_b = document.querySelector('.cerrarMenu');
 function toggleMenu() {
     menu.classList.toggle("menu_abierto");
 }
+
+//evento a la funcion o ejecutar
+abrir_menu_b.addEventListener("click",toggleMenu);
+cerrar_menu_b.addEventListener("click",toggleMenu);
+
+export {
+    createLandingPage
+}
+
+
+// let menu = document.querySelector('.menu');
+// let abrir_menu_b = document.querySelector('.abrirMenu');
+// let cerrar_menu_b = document.querySelector('.cerrarMenu');
+
+// funcion que abra y cierre
+// function toggleMenu() {
+//     menu.classList.toggle("menu_abierto");
+// }
 
 // //evento a la funcion o ejecutar
 // abrir_menu_b.("click",toggleMenu);
