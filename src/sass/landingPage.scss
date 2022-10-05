@@ -2,16 +2,20 @@
 
 .landingPage{
     width: 100%;
-    max-width: 1200px;
+    max-width: 600px;
     @include flex-column-center;
+    background-color: #EDE5DB;
+
+    &_menuHidden{
+        max-height: 0px; 
+    }
 
     &_header{
-        @include flex-column-row;
         width: 100%;
-        height: 50px;
-        justify-content: space-between;
+        min-height: 60px;
+        @include perfect-center;
+        padding: 5px 0;
         background-color: #fff;
-        
     }
 
     &_header--nav{
@@ -21,52 +25,59 @@
 
     }
 
-    // &_nav
-    // &_header--icon{
-    //     justify-content: center;
-    //     align-items: center;
-    //     margin-left: 20px;
-    //     color: #5F15AD;
-    
-    // }
 
-    // &_header--logo{
-    //     width: 20%;
-    //     height: 50px;
-    //     max-width: 80px;
-    // }
-
-    // &_header--sing{
-    //     width: 25%;
-    //     font-size: 12px;
-    //     font-weight: 300;
-    //     background-color: #fff;
-    //     color: #5F15AD;
-    //     border: none;
-    //     font-family: sans-serif;
-    // }
 
     &_main{
-        width: 80%;
+        width: 90%;
         max-width: 600px;
+        margin: 30px 10px 50px;
         @include flex-column-center;
-        gap: 20px;
+        gap: 40px;
 
     }
     
     &_main--welcomeBox{
-        width: 100%;
-        @include flex-column-center;
-        margin: auto;
-        gap: 20px;
-        
+        // width: 100%;
+        // @include flex-column-center;
+        // gap: 20px;    
     }
 
     &_footer{
         width: 100%;
+        padding: 5px;
         @include flex-column-center;
+        background:#fff;
     }
 }   
+
+.header{
+    &_top{
+        width: 90%;
+        @include flex-row-spaceBetween;
+        position: relative; 
+    }
+    &_top--openMenu{
+        width: 35px;
+        max-width: 50px;
+        min-height: 35px;
+        max-height: 50px;
+        cursor: pointer;
+    }
+    &_top--logo{
+        width: 18%;
+        max-width: 70px;
+        position: absolute;
+        cursor: pointer;
+        left: 40%;
+    }
+    &_top--singIn{
+        border-style: none;
+        color: $primary-color; 
+        background: none;
+        cursor: pointer;
+    }
+}
+
 
 .nav{
 
@@ -150,67 +161,72 @@
 }
 
 .welcomeBox{
+    width: 100%;
+    @include flex-column-center;
+    gap: 20px; 
+
     &_container{
         width: 100%;
-        max-width: 750px;
         @include flex-column-center;
         gap: 20px;
         
     }
 
     &_tittle{
-        width: 40%;
+        width: 70%;
         margin-top: 20px;
         @include perfect-center;
-        color: #5F15AD;
+        color: $primary-color;
         text-align: center;
         font-size: 28px;
     }
     
     &_text{
+       // width: 70%;
         text-align: center;
-        color: #F7990F;
-        width: 40%;
-        max-width: 280px;
-        justify-content: center;
-        align-items: center;
+        color: $secundary-color;
     }
 
     &_button{
-        width: 30%;
-        height: 30px;
+        padding: 5px 10px;
         border-radius: 5px;
         border: none;
-        @include perfect-center;
         color: #fff;
         background-color: #1DAD4B;
+        cursor: pointer;
     }
 
     &_img{
-        @include perfect-center;
-        width: 50%;
-        max-width: 600px;
+        width: 80%;
+        max-width: 250px;
     }
     
 }
 
 .advantage{
+    width: 100%;
+    @include flex-column-center;
+    align-content: center;
+    //gap: 40px;
+
     &_container{
         width: 100%;
         @include flex-column-center;
+        gap: 20px;
 
     }
 
     &_section{
-        width: 100%;
+        width: 80%;
         @include flex-column-row;
-        gap: 10px
+        gap: 10px;
     }
 
     &_section--img{
-        width: 15%;
-        height: 30px;
-
+        width: 40px;
+        max-width: 60px;
+        min-height: 40px;
+        max-height: 60px;
     }
 
     &_section--h2{
@@ -221,6 +237,13 @@
 }
 
 .about{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
     &_container{
         width: 100%;
         @include flex-column-center;
@@ -249,50 +272,46 @@
     }
 
     &_img{
-        @include perfect-center;
-        width: 50%;
-        max-width: 600px;
+        width: 80%;
+        max-width: 250px;
     }
 }
 
 .footer{
-    background-color: #fff;
 
     &_redes{
-        @include flex-column-row;
-        max-width: 750;
+        width: 100%;
+        padding: 0 20px;
         height: 40px;
-        justify-content: space-around;
+        @include flex-column-row;
+        justify-content: space-between;
         border-bottom: 1px solid #5F15AD;
-
     }
+
 
     &_logo{
-        max-width: 750px;
-
-    }
-
-    &_img{
-        max-width: 30px;
-        height: 30px;
-        margin-left: 10px;
+        width: 35px;
+        max-width: 50px;
+        min-height: 35px;
     }
 
     &_img--logo{
-        max-width: 100px;
-        height: 40px;
-        margin-left: 100px;
-        @include perfect-center;
+        width: 100%;
+    }
+
+    &_img{
+        width: 25px;
+        max-width: 30px;
+        min-height: 25px;
+        max-height: 30px;
     }
 
     &_autor{
-        @include perfect-center;
+        width: 90%;
+        padding: 5px 0;
         text-align: center;
-        width: 100%;
-        max-width: 220px;
-        height: 40px;
         font-size: 12px;
-        color: rgba(95, 21, 173, 0.56);
+        color: rgba(94, 21, 173, 0.655);
     }
 }
 
@@ -301,28 +320,31 @@
 
     .landingPage{
 
+        max-width: 900px;
+
         &_header{
-            max-width: 750px;
+            max-width: 900px;
+        }
+        &_main{
+            max-width: 800px;
         }
 
     }
     .welcomeBox{
 
-        &_tittle{
-            width: 60%;
-        }
+        //&_tittle{
+        //    width: 60%;
+        //}
 
-        &_text{
-            width: 40%;
-            max-width: 280px;
-            height: 90px;
+        &_img{
+            max-width: 340px;
         }
     }
     .advantage{
 
         &_section--img{
-            max-width: 40px;
-            height: 40px;
+            max-width: 80px;
+            max-height: 80px;
         }
 
         &_section--h2{
@@ -334,8 +356,12 @@
         &_text{
             max-width: 380px;
         }
+
+        &_img{
+            max-width: 340px;
+        }
     }
-    .footer
+    .footer{
 
         &_img--logo{
             margin-left: 100% ;
@@ -345,22 +371,76 @@
             max-width: 400px;
         }
     }
+}
 
 @media (min-width: 1024px) {
 
     .landingPage{
+        max-width: 1220px;
 
         &_header{
             max-width: 1220px;
             height: 70px;
         }
 
-        &_main--welcomeBOx{
-            max-width: 800px;
-            flex-direction: row-reverse;
+        &_main{
+            max-width: 1000px;
+        }
+
+        // &_main--welcomeBOx{
+        //     //max-width: 800px;
+        //     flex-direction: row-reverse;
+        // }
+     
+    }
+
+    .welcomeBox{
+
+        flex-direction: row-reverse;
+
+        &_tittle{
+        //    width: 60%;
+            font-size: 28px;
+        }
+        &_text{
+        //    width: 60%;
+            font-size: 22px;
+        }
+
+        &_img{
+            max-width: 480px;
+        }
+
+    }
+
+    .advantage{
+        flex-direction: row;
+        gap: 40px;
+        
+        &_section--img{
+            max-width: 100px;
+            max-height: 100px;
         }
     }
 
+    .about{
+        flex-direction: row;
+
+        &_img{
+            max-width: 480px;
+        }
+    }
+    
+    .footer{
+        position: relative;
+
+        &_redes{
+            border-style: none;
+        }
+        &_autor{
+            position: absolute;
+        }
+    }
 
     
 }

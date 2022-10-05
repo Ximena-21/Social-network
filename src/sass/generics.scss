@@ -22,6 +22,14 @@ $tertiary-color: #1DAD4B;
     flex-direction: row;
 }
 
+@mixin flex-row-spaceBetween {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
 @mixin input {
     width: 90%;
     max-width: 260px;

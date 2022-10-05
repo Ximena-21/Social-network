@@ -1,18 +1,20 @@
 .landingPage {
   width: 100%;
-  max-width: 1200px;
+  max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #EDE5DB; }
+  .landingPage_menuHidden {
+    max-height: 0px; }
   .landingPage_header {
+    width: 100%;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    height: 50px;
-    justify-content: space-between;
+    padding: 5px 0;
     background-color: #fff; }
   .landingPage_header--nav {
     width: 100%;
@@ -22,27 +24,51 @@
     flex-direction: row;
     justify-content: space-between; }
   .landingPage_main {
-    width: 80%;
+    width: 90%;
     max-width: 600px;
+    margin: 30px 10px 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px; }
-  .landingPage_main--welcomeBox {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: auto;
-    gap: 20px; }
+    gap: 40px; }
   .landingPage_footer {
     width: 100%;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; }
+    flex-direction: column;
+    background: #fff; }
+
+.header_top {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  position: relative; }
+
+.header_top--openMenu {
+  width: 35px;
+  max-width: 50px;
+  min-height: 35px;
+  max-height: 50px;
+  cursor: pointer; }
+
+.header_top--logo {
+  width: 18%;
+  max-width: 70px;
+  position: absolute;
+  cursor: pointer;
+  left: 40%; }
+
+.header_top--singIn {
+  border-style: none;
+  color: #5F15AD;
+  background: none;
+  cursor: pointer; }
 
 .nav_menuLogo {
   width: 50%;
@@ -103,172 +129,195 @@
   opacity: 1;
   pointer-events: all; }
 
-.welcomeBox_container {
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px; }
-
-.welcomeBox_tittle {
-  width: 40%;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #5F15AD;
-  text-align: center;
-  font-size: 28px; }
-
-.welcomeBox_text {
-  text-align: center;
-  color: #F7990F;
-  width: 40%;
-  max-width: 280px;
-  justify-content: center;
-  align-items: center; }
-
-.welcomeBox_button {
-  width: 30%;
-  height: 30px;
-  border-radius: 5px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background-color: #1DAD4B; }
-
-.welcomeBox_img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  max-width: 600px; }
-
-.advantage_container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
-
-.advantage_section {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 10px; }
-
-.advantage_section--img {
-  width: 15%;
-  height: 30px; }
-
-.advantage_section--h2 {
-  font-size: 14px;
-  color: #BE7100; }
-
-.about_container {
+.welcomeBox {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px; }
+  .welcomeBox_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px; }
+  .welcomeBox_tittle {
+    width: 70%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5F15AD;
+    text-align: center;
+    font-size: 28px; }
+  .welcomeBox_text {
+    text-align: center;
+    color: #F7990F; }
+  .welcomeBox_button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #1DAD4B;
+    cursor: pointer; }
+  .welcomeBox_img {
+    width: 80%;
+    max-width: 250px; }
 
-.about_tittle {
+.advantage {
   width: 100%;
-  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5F15AD;
-  text-align: center;
-  font-size: 28px; }
-
-.about_text {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  max-width: 280px;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
-  font-size: 16px; }
-
-.about_img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  max-width: 600px; }
-
-.footer {
-  background-color: #fff; }
-  .footer_redes {
+  flex-direction: column;
+  align-content: center; }
+  .advantage_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px; }
+  .advantage_section {
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    max-width: 750;
-    height: 40px;
-    justify-content: space-around;
-    border-bottom: 1px solid #5F15AD; }
-  .footer_logo {
-    max-width: 750px; }
-  .footer_img {
-    max-width: 30px;
-    height: 30px;
-    margin-left: 10px; }
-  .footer_img--logo {
-    max-width: 100px;
-    height: 40px;
-    margin-left: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-  .footer_autor {
+    gap: 10px; }
+  .advantage_section--img {
+    width: 40px;
+    max-width: 60px;
+    min-height: 40px;
+    max-height: 60px; }
+  .advantage_section--h2 {
+    font-size: 14px;
+    color: #BE7100; }
+
+.about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px; }
+  .about_container {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    gap: 20px; }
+  .about_tittle {
     width: 100%;
-    max-width: 220px;
-    height: 40px;
-    font-size: 12px;
-    color: rgba(95, 21, 173, 0.56); }
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5F15AD;
+    text-align: center;
+    font-size: 28px; }
+  .about_text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    max-width: 280px;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-size: 16px; }
+  .about_img {
+    width: 80%;
+    max-width: 250px; }
+
+.footer_redes {
+  width: 100%;
+  padding: 0 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #5F15AD; }
+
+.footer_logo {
+  width: 35px;
+  max-width: 50px;
+  min-height: 35px; }
+
+.footer_img--logo {
+  width: 100%; }
+
+.footer_img {
+  width: 25px;
+  max-width: 30px;
+  min-height: 25px;
+  max-height: 30px; }
+
+.footer_autor {
+  width: 90%;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(94, 21, 173, 0.655); }
 
 @media (min-width: 750px) {
-  .landingPage_header {
-    max-width: 750px; }
-  .welcomeBox_tittle {
-    width: 60%; }
-  .welcomeBox_text {
-    width: 40%;
-    max-width: 280px;
-    height: 90px; }
+  .landingPage {
+    max-width: 900px; }
+    .landingPage_header {
+      max-width: 900px; }
+    .landingPage_main {
+      max-width: 800px; }
+  .welcomeBox_img {
+    max-width: 340px; }
   .advantage_section--img {
-    max-width: 40px;
-    height: 40px; }
+    max-width: 80px;
+    max-height: 80px; }
   .advantage_section--h2 {
     font-size: 16px; }
   .about_text {
     max-width: 380px; }
-  .footer
-_img--logo {
+  .about_img {
+    max-width: 340px; }
+  .footer_img--logo {
     margin-left: 100%; }
-  .autor {
+  .footer .autor {
     max-width: 400px; } }
 
 @media (min-width: 1024px) {
-  .landingPage_header {
-    max-width: 1220px;
-    height: 70px; }
-  .landingPage_main--welcomeBOx {
-    max-width: 800px;
-    flex-direction: row-reverse; } }
+  .landingPage {
+    max-width: 1220px; }
+    .landingPage_header {
+      max-width: 1220px;
+      height: 70px; }
+    .landingPage_main {
+      max-width: 1000px; }
+  .welcomeBox {
+    flex-direction: row-reverse; }
+    .welcomeBox_tittle {
+      font-size: 28px; }
+    .welcomeBox_text {
+      font-size: 22px; }
+    .welcomeBox_img {
+      max-width: 480px; }
+  .advantage {
+    flex-direction: row;
+    gap: 40px; }
+    .advantage_section--img {
+      max-width: 100px;
+      max-height: 100px; }
+  .about {
+    flex-direction: row; }
+    .about_img {
+      max-width: 480px; }
+  .footer {
+    position: relative; }
+    .footer_redes {
+      border-style: none; }
+    .footer_autor {
+      position: absolute; } }
