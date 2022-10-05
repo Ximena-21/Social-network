@@ -8,10 +8,11 @@
 
     &_headerBox {
         width: 100%;
-        max-width: 700px;
+        //max-width: 700px;
         min-height: 50px;
         padding: 0 10px;
         @include flex-column-row;
+        flex-direction: row-reverse;
         justify-content: space-between;
         background: #ECE7F1;
         position: fixed;
@@ -29,16 +30,16 @@
     &_wallPost{
         width: 100%;
         max-width: 700px;
-        margin-top: 60px;
+        margin: 60px 0;
         gap: 20px;
         @include flex-column-center;
     }
     &_footerMenu{
         width: 100%;
-        max-width: 750px;
+        //max-width: 750px;
         min-height: 50px;
         @include flex-column-row;
-        gap: 70px;
+        justify-content: space-around;
         background: #3B007A;
         position: fixed;
         bottom: 0;
@@ -52,10 +53,11 @@
 
 .postContainer{
     width: 100%;
+    max-width: 400px;
     @include flex-column-center;
-    // /* gap: 30px; */
+    padding: 20px 0;
+    gap: 20px;
     // /* border-radius: 10px; */
-    // /* padding: 20px; */
     box-shadow: rgb(217, 217, 217) 0px 3px 12px;
 
     &_headerPost{
@@ -85,41 +87,76 @@
         width: 20px;
         height: 20px;
     }
+    &_postImage{
+        width: 100%;
+        max-width: 400px;
+        height: 500px;
+        @include perfect-center;
+        background: #f7f7f769;
+        //max-height: 500px;
+        //max-width: 400px;
+    }
+
     &_postImage--img{
         width: 100%;
-        //height: 200px;
-       //border-radius: 8px;
-        padding-bottom: 5px;
+        height: 100%;
     }
 }
 
-//otros estilos como instagram
-// .postContainer {
-//       width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // flex-direction: column;
-    // /* gap: 30px; */
-    // /* border-radius: 10px; */
-    // /* padding: 20px; */
-    // box-shadow: #d9d9d9 0px 3px 10px;
-// }
+.sideMenu{
+    width: 70%;
+    max-width: 600px;
+    min-height: 100vh;
+    /* max-height: 100vh; */
+    @include flex-column-center;
+    gap: 40px;
+    background: #ece7f1b2;
+    color: $primary-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.4s;
+    
+    &_hidden{
+        min-height: 0px;
+        max-height: 0px;
+    }
 
-// .postContainer_headerPost {
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     padding: 5px 10px;
-// }
+    &_exitMenu{
+        width: 20px;
+        max-width: 40px;
+        min-height: 20px;
+        max-height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 
+    &_usernameBox{
+        width: 100%;
+        @include flex-column-center;
+        gap: 10px;
+    }
 
-// .postContainer_postImage--img {
-//     width: 100%;
-//     /* height: 200px; */
-//     /* border-radius: 8px; */
-//      padding-bottom: 5px;
-// }
+    &_menu{
+        width: 100%;
+        @include flex-column-center;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    &_optionBox{
+        width: 90%;
+        @include flex-column-row;
+        justify-content: flex-start;
+        gap: 5px;
+
+        &--img{
+            width: 30px;
+            max-width: 50px;
+            min-height: 30px;
+            max-height: 50px;
+        }
+    }
+}

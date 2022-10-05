@@ -1,6 +1,5 @@
 .landingPage {
   width: 100%;
-  max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +47,8 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  padding: 5px 15px; }
 
 .header_top--openMenu {
   width: 35px;
@@ -267,12 +267,8 @@
   color: rgba(94, 21, 173, 0.655); }
 
 @media (min-width: 750px) {
-  .landingPage {
-    max-width: 900px; }
-    .landingPage_header {
-      max-width: 900px; }
-    .landingPage_main {
-      max-width: 800px; }
+  .landingPage_main {
+    max-width: 800px; }
   .welcomeBox_img {
     max-width: 340px; }
   .advantage_section--img {
@@ -290,13 +286,10 @@
     max-width: 400px; } }
 
 @media (min-width: 1024px) {
-  .landingPage {
-    max-width: 1220px; }
-    .landingPage_header {
-      max-width: 1220px;
-      height: 70px; }
-    .landingPage_main {
-      max-width: 1000px; }
+  .landingPage_header {
+    height: 70px; }
+  .landingPage_main {
+    max-width: 1000px; }
   .welcomeBox {
     flex-direction: row-reverse; }
     .welcomeBox_tittle {

@@ -1,5 +1,7 @@
 import { Post } from "../components/postcomponent.js";
+import { sideMenu, toggleMenu } from "../components/sideMenu.js";
 import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
+import { onNavigate } from "../helpers.js";
 
 const createWallPage = () =>{
 
@@ -7,7 +9,7 @@ const createWallPage = () =>{
     wallPageContainer.className = 'wallPage'
 
     wallPageContainer.innerHTML = `
-    <div class="wallPage_headerBox sideMenu">
+    <div class="wallPage_headerBox" id='header'>
         <img src="../img/logoK.png" alt="logo Knitters" class="wallPage_logo">
         <img src="../img/menuHidden.png" alt="logo Knitters" class="wallPage_menuHidden">
     </div>
@@ -23,7 +25,33 @@ const createWallPage = () =>{
         <img src="../img/user.png" alt="profile" class="wallPage_footerMenu--icon" id="profile">
     </div>
     `
-    //wallPageContainer.querySelector('.wallPage_headerBox sideMenu').appendChild(sideMenu())
+    const btnMenu = wallPageContainer.querySelector('.wallPage_menuHidden')
+
+    wallPageContainer.querySelector('.wallPage_logo').addEventListener('click', (e)=>{
+        e.preventDefault()
+        onNavigate('/')
+    })
+    
+    wallPageContainer.querySelector('#header').appendChild(sideMenu())
+    const menuHidden = wallPageContainer.querySelector('.sideMenu')
+    
+    
+    btnMenu.addEventListener('click', (e)=>{
+        //e.preventDefault()
+        console.log('desplegar el menu')
+        toggleMenu(menuHidden, btnMenu)
+        //wallPageContainer.querySelector('.wallPage_menuHidden').remove()
+    })
+    
+    wallPageContainer.querySelector('#exitMenu').addEventListener('click', () => {
+        console.log('cerrar menu')
+        toggleMenu(menuHidden, btnMenu)
+        //wallPageContainer.appendChild( wallPageContainer.querySelector('.wallPage_menuHidden'))
+        //menuHidden.toggleClass('sideMenu_hidden')
+    })
+
+
+
     const postContainer = wallPageContainer.querySelector('.wallPage_wallPost')
     //.appendChild(post())
     // const post = renderPost(postContainer)

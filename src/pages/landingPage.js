@@ -79,14 +79,14 @@ function createLandingPage () {
     `
     // console.log(landingPageContainer.querySelector('.singIn'))
 
-    // landingPageContainer.querySelector('.singIn').addEventListener('click', () => {
-    //     // console.log('sirve el boton iniciar sesion')
-    //     onNavigate('/login')
-    // })
-    // landingPageContainer.querySelector('.register').addEventListener('click', () => {
-    //     // console.log('sirve el boton iniciar sesion')
-    //     onNavigate('/register')
-    // })
+    landingPageContainer.querySelector('#btn_singIn').addEventListener('click', () => {
+        // console.log('sirve el boton iniciar sesion')
+        onNavigate('/login')
+    })
+    landingPageContainer.querySelector('.register').addEventListener('click', () => {
+        // console.log('sirve el boton iniciar sesion')
+        onNavigate('/register')
+    })
     return landingPageContainer
 }
 

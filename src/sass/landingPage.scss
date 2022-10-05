@@ -2,7 +2,7 @@
 
 .landingPage{
     width: 100%;
-    max-width: 600px;
+    //max-width: 600px;
     @include flex-column-center;
     background-color: #EDE5DB;
 
@@ -55,6 +55,7 @@
         width: 90%;
         @include flex-row-spaceBetween;
         position: relative; 
+        padding: 5px 15px;
     }
     &_top--openMenu{
         width: 35px;
@@ -320,10 +321,10 @@
 
     .landingPage{
 
-        max-width: 900px;
+        //max-width: 900px;
 
         &_header{
-            max-width: 900px;
+            //max-width: 900px;
         }
         &_main{
             max-width: 800px;
@@ -376,10 +377,10 @@
 @media (min-width: 1024px) {
 
     .landingPage{
-        max-width: 1220px;
+        //max-width: 1220px;
 
         &_header{
-            max-width: 1220px;
+            //max-width: 1220px;
             height: 70px;
         }
 
