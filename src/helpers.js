@@ -28,9 +28,13 @@ function onNavigate (pathName) {
     root.appendChild(pageRender) 
 }
 
-
+function toggleMenu (menuHidden, btn) {
+    menuHidden.classList.toggle('sideMenu_hidden')
+    btn.classList.toggle('sideMenu_hidden')
+}
 
 export {
     onNavigate,
-    routes
+    routes,
+    toggleMenu
 }

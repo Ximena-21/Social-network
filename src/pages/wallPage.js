@@ -1,7 +1,7 @@
 import { Post } from "../components/postcomponent.js";
-import { sideMenu, toggleMenu } from "../components/sideMenu.js";
+import { sideMenu,} from "../components/sideMenu.js";
 import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
-import { onNavigate } from "../helpers.js";
+import { onNavigate, toggleMenu } from "../helpers.js";
 
 const createWallPage = () =>{
 
@@ -29,10 +29,10 @@ const createWallPage = () =>{
 
     wallPageContainer.querySelector('.wallPage_logo').addEventListener('click', (e)=>{
         e.preventDefault()
-        onNavigate('/')
+        onNavigate('/wall')
     })
     
-    wallPageContainer.querySelector('#header').appendChild(sideMenu())
+    wallPageContainer.querySelector('#header').appendChild(sideMenu()) //inyectando el menu desplegable 
     const menuHidden = wallPageContainer.querySelector('.sideMenu')
     
     

@@ -57,7 +57,7 @@
     @include flex-column-center;
     padding: 20px 0;
     gap: 20px;
-    // /* border-radius: 10px; */
+    border-radius: 10px;
     box-shadow: rgb(217, 217, 217) 0px 3px 12px;
 
     &_headerPost{
@@ -103,60 +103,3 @@
     }
 }
 
-.sideMenu{
-    width: 70%;
-    max-width: 400px;
-    min-height: 100vh;
-    /* max-height: 100vh; */
-    @include flex-column-center;
-    gap: 40px;
-    background: #ece7f1b2;
-    color: $primary-color;
-    position: absolute;
-    left: 0;
-    top: 0;
-    overflow: hidden;
-    transition: all 0.4s;
-    
-    &_hidden{
-        min-height: 0px;
-        max-height: 0px;
-    }
-
-    &_exitMenu{
-        width: 20px;
-        max-width: 40px;
-        min-height: 20px;
-        max-height: 40px;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    &_usernameBox{
-        width: 100%;
-        @include flex-column-center;
-        gap: 10px;
-    }
-
-    &_menu{
-        width: 100%;
-        @include flex-column-center;
-        justify-content: flex-start;
-        gap: 10px;
-    }
-
-    &_optionBox{
-        width: 90%;
-        @include flex-column-row;
-        justify-content: flex-start;
-        gap: 5px;
-
-        &--img{
-            width: 30px;
-            max-width: 50px;
-            min-height: 30px;
-            max-height: 50px;
-        }
-    }
-}

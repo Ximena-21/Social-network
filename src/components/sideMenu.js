@@ -32,12 +32,8 @@ const sideMenu = () => {
     return sideMenu
 }
 
-function toggleMenu (menuHidden, btn) {
-    menuHidden.classList.toggle('sideMenu_hidden')
-    btn.classList.toggle('sideMenu_hidden')
-}
+
 
 export {
     sideMenu,
-    toggleMenu,
 }
