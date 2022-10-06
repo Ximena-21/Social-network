@@ -18,6 +18,7 @@
     &_hidden{
         min-height: 0px;
         max-height: 0px;
+        //width: 0;
     }
 
     &_exitMenu{
@@ -28,6 +29,7 @@
         position: absolute;
         top: 20px;
         right: 20px;
+        cursor: pointer;
     }
 
     &_usernameBox{
@@ -54,6 +56,19 @@
             max-width: 50px;
             min-height: 30px;
             max-height: 50px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .sideMenu{
+        left: auto;
+        right: 0;
+        top: 50px;
+
+        &_exitMenu{
+            right: auto;
+            left: 20px;
         }
     }
 }

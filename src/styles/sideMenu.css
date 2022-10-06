@@ -25,7 +25,8 @@
     max-height: 40px;
     position: absolute;
     top: 20px;
-    right: 20px; }
+    right: 20px;
+    cursor: pointer; }
   .sideMenu_usernameBox {
     width: 100%;
     display: flex;
@@ -54,3 +55,12 @@
       max-width: 50px;
       min-height: 30px;
       max-height: 50px; }
+
+@media (min-width: 1024px) {
+  .sideMenu {
+    left: auto;
+    right: 0;
+    top: 50px; }
+    .sideMenu_exitMenu {
+      right: auto;
+      left: 20px; } }

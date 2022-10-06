@@ -44,7 +44,12 @@
     position: fixed;
     bottom: 0; }
   .wallPage_footerMenu--icon {
-    width: 20px; }
+    width: 20px;
+    max-width: 40px;
+    min-height: 20px;
+    max-height: 40px;
+    border-style: none;
+    cursor: pointer; }
 
 .postContainer {
   width: 100%;
@@ -98,3 +103,40 @@
   .postContainer_postImage--img {
     width: 100%;
     height: 100%; }
+
+.icon_search {
+  background: url(../img/search.png) no-repeat center/cover; }
+
+.icon_home {
+  background: url(../img/homeFooter.png) no-repeat center/cover; }
+
+.icon_uploadPost {
+  background: url(../img/share.png) no-repeat center/cover; }
+
+.icon_profile {
+  background: url(../img/user.png) no-repeat center/cover; }
+
+.footerMenu_Hidden {
+  width: 0; }
+
+@media (min-width: 1024px) {
+  .wallPage_headerBox {
+    flex-direction: row; }
+  .wallPage_footerMenu {
+    top: 0;
+    width: 25%;
+    right: 0;
+    bottom: auto;
+    background: none; }
+  .wallPage_menuHidden {
+    width: 0; }
+  .sideMenu {
+    left: auto; }
+  .icon_search {
+    background: url(../img/searchPurple.png) no-repeat center/cover; }
+  .icon_home {
+    background: url(../img/homePurple.png) no-repeat center/cover; }
+  .icon_uploadPost {
+    background: url(../img/sharePurple.png) no-repeat center/cover; }
+  .icon_profile {
+    background: url(../img/profilePurple.png) no-repeat center/cover; } }

@@ -19,13 +19,14 @@ const createWallPage = () =>{
     </div>
 
     <div class="wallPage_footerMenu">
-        <img src="../img/homeFooter.png" alt="home" class="wallPage_footerMenu--icon" id="home">
-        <img src="../img/search.png" alt="search" class="wallPage_footerMenu--icon" id="search">
-        <img src="../img/share.png" alt="upload post" class="wallPage_footerMenu--icon" id="uploadPost">
-        <img src="../img/user.png" alt="profile" class="wallPage_footerMenu--icon" id="profile">
+        <button class="wallPage_footerMenu--icon icon_search" id="search"></button>
+        <button class="wallPage_footerMenu--icon icon_home" id="home"></button>
+        <button class="wallPage_footerMenu--icon icon_uploadPost" id="uploadPost"></button>
+        <button class="wallPage_footerMenu--icon icon_profile" id="profile"></button>
     </div>
     `
     const btnMenu = wallPageContainer.querySelector('.wallPage_menuHidden')
+    //const btnMobile = wallPageContainer.querySelector('.wallPage_footerMenu--icon')
 
     wallPageContainer.querySelector('.wallPage_logo').addEventListener('click', (e)=>{
         e.preventDefault()
@@ -36,18 +37,22 @@ const createWallPage = () =>{
     const menuHidden = wallPageContainer.querySelector('.sideMenu')
     
     
-    btnMenu.addEventListener('click', (e)=>{
-        //e.preventDefault()
-        console.log('desplegar el menu')
+    btnMenu.addEventListener('click', ()=>{
         toggleMenu(menuHidden, btnMenu)
-        //wallPageContainer.querySelector('.wallPage_menuHidden').remove()
     })
     
     wallPageContainer.querySelector('#exitMenu').addEventListener('click', () => {
         console.log('cerrar menu')
         toggleMenu(menuHidden, btnMenu)
-        //wallPageContainer.appendChild( wallPageContainer.querySelector('.wallPage_menuHidden'))
-        //menuHidden.toggleClass('sideMenu_hidden')
+    })
+
+    wallPageContainer.querySelector('.icon_profile').addEventListener('click', () => {
+        menuHidden.classList.remove('sideMenu_hidden')
+    })
+
+    wallPageContainer.querySelector('#home').addEventListener('click', (e)=>{
+        e.preventDefault()
+        onNavigate('/wall')
     })
 
 
