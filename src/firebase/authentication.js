@@ -5,6 +5,10 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   sendEmailVerification,
+  GoogleAuthProvider,
+  getAuth,
+  signInWithRedirect,
+  signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 import { onNavigate } from "../helpers.js";
@@ -75,10 +79,10 @@ onAuthStateChanged(auth, (user) =>{
 
       // const actuallyPath = window.location.pathname
 
-      if(actuallyPath === '/wall' || actuallyPath === 'profile'){
-        console.log('usted no edberia estar aca por que ya esta logueado')
-        onNavigate('/register')
-      }
+      // if(actuallyPath === '/wall' || actuallyPath === 'profile'){
+      //   console.log('usted no edberia estar aca por que ya esta logueado')
+      //   onNavigate('/register')
+      // }
 
       console.log('el estado de usuario cambio y no esta logueado')
     }
@@ -132,6 +136,29 @@ function singIn (email,password) {
   })
 }
 
+//iniciar sesion con google
+function singInGoogle() {
+// const auth = getAuth();
+const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider)
+    .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log('credenciales: ', credential, token);
+      return result;
+    }).catch((error) => {
+    // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // eslint-disable-next-line no-console
+      console.log(error);
+      console.log('primero ', errorCode, 'segundo ', errorMessage);
+    });
+};
+
 
 function logout () {
     return signOut(auth).then(() => {
@@ -142,5 +169,6 @@ function logout () {
 
 export {
   registerUser,
-  singIn
+  singIn,
+  singInGoogle
 }

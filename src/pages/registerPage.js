@@ -1,5 +1,6 @@
-import { registerUser } from "../firebase/authentication.js"
+import { registerUser, singInGoogle } from "../firebase/authentication.js"
 import { onNavigate } from "../helpers.js"
+
 
 function createRegisterPage () {
 
@@ -64,6 +65,8 @@ function createRegisterPage () {
     registerPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {
         event.preventDefault()
         console.log('iniciar sesion con google')
+        singInGoogle()
+
     })
 
     registerPageContainer.querySelector('#clickSingIn').addEventListener('click', (event) => {
