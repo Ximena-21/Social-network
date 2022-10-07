@@ -23,19 +23,7 @@ function uploadPost() {
             image.src = fr.result;
         };
    }
-   
-
-    // function changeInput (e){
-    //     console.log('elevento que entra', e)
-        // const fr  = new FileReader();
-        // fr.readAsDataURL(e.target.files[0]);
-        // fr.onload = function(){
-        //     const preview =document.getElementById('preview');
-        //     image = document.createElement('img')
-        //     image.src = fr.result;
-        //     preview.append(image);
-        // };
-    // };
+ 
     return uploadPostContainer
 }
 
