@@ -4,6 +4,7 @@
 @import url("./landingPage.css");
 @import url("./wallPage.css");
 @import url("./sideMenu.css");
+@import url("./uploadPost.css");
 * {
   box-sizing: border-box;
   padding: 0;

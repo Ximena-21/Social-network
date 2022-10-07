@@ -1,7 +1,8 @@
 import { Post } from "../components/postcomponent.js";
 import { sideMenu,} from "../components/sideMenu.js";
 import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
-import { onNavigate, toggleMenu } from "../helpers.js";
+import { deployUploadPost, onNavigate, toggleMenu } from "../helpers.js";
+
 
 const createWallPage = () =>{
 
@@ -53,6 +54,12 @@ const createWallPage = () =>{
     wallPageContainer.querySelector('#home').addEventListener('click', (e)=>{
         e.preventDefault()
         onNavigate('/wall')
+    })
+
+    wallPageContainer.querySelector('#uploadPost').addEventListener('click', (e)=>{
+        //e.preventDefault()
+        const main = document.querySelector('#root')
+        deployUploadPost(main)
     })
 
 
