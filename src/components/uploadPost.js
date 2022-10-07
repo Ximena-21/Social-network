@@ -10,7 +10,21 @@ function uploadPost() {
             <button class="uploadPost_btn" id="btnPost">Subir Post</button>
         </div>
     `
+<<<<<<< HEAD
     
+=======
+
+   uploadPostContainer.querySelector('#postImg').onchange = (event)=>{
+        console.log('elevento que entra', event)
+        const fr  = new FileReader();
+        fr.readAsDataURL(event.target.files[0]);
+        fr.onload = function(){
+            const image =uploadPostContainer.querySelector('#preview');
+            image.src = fr.result;
+        };
+   }
+ 
+>>>>>>> 65cbe9403bffd1fbdcdc59e13a157637fbfe55d8
     return uploadPostContainer
 }
 
