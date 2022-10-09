@@ -9,6 +9,7 @@ import {
   getAuth,
   signInWithRedirect,
   signInWithPopup,
+  updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 import { onNavigate } from "../helpers.js";
@@ -77,12 +78,12 @@ onAuthStateChanged(auth, (user) =>{
 
       //no puede estar en x routes
 
-      // const actuallyPath = window.location.pathname
+      const actuallyPath = window.location.pathname
 
-      // if(actuallyPath === '/wall' || actuallyPath === 'profile'){
-      //   console.log('usted no edberia estar aca por que ya esta logueado')
-      //   onNavigate('/register')
-      // }
+      if(actuallyPath === '/wall' || actuallyPath === 'profile'){
+        console.log('usted no edberia estar aca porq ue no esta logueado')
+        // onNavigate('/login')
+      }
 
       console.log('el estado de usuario cambio y no esta logueado')
     }
@@ -98,9 +99,21 @@ function registerUser(name='',email='',password='') {
 
       const user = registeredUser.user
       console.log('la cuenta fue creada con exito', user)
-      return logout()
+      const nameForAvatar = name.split(' ').slice(0,2).join('+')
+      const randomColor = Math.floor(Math.random()*16777215).toString(16)
+      const gravatar= `https://ui-avatars.com/api/?name=${nameForAvatar}&background=${randomColor}`
+
+      return updateProfile(user,{
+        displayName: name, 
+        photoURL: gravatar,
+      })
+
+
+      // return logout()
     })
     .then(() => {
+
+      console.log('el usuario ha sido actualizado')
       // sendEmailVerification(auth.currentUser)
       //   .then(() => {
 
@@ -170,5 +183,6 @@ function logout () {
 export {
   registerUser,
   singIn,
-  singInGoogle
+  singInGoogle,
+  logout
 }

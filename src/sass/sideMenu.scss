@@ -2,23 +2,26 @@
 
 .sideMenu{
     width: 70%;
-    max-width: 400px;
     min-height: 100vh;
-    /* max-height: 100vh; */
     @include flex-column-center;
+    justify-content: start;
+    padding: 50px 0;
+    max-width: 400px;
     gap: 40px;
-    background: #ece7f1b2;
+    background: #ece7f1;
     color: $primary-color;
     position: absolute;
     left: 0;
     top: 0;
-    overflow: hidden;
-    transition: all 0.4s;
+    // overflow: hidden;
+    // transition: width 0.5s , opacity 0.5s;
+    transition: width 0.5s , opacity 0.3s;
+    opacity: 1;
     
     &_hidden{
-        min-height: 0px;
-        max-height: 0px;
-        //width: 0;
+        width: 0;
+        opacity: 0;
+        transition: width 0.5s , opacity 0.2s 0.1S;
     }
 
     &_exitMenu{
@@ -36,6 +39,7 @@
         width: 100%;
         @include flex-column-center;
         gap: 10px;
+        padding-top: 50px;
     }
 
     &_menu{
@@ -57,6 +61,16 @@
             min-height: 30px;
             max-height: 50px;
         }
+    }
+}
+
+
+//
+.sideMenu{
+    &_imgUsername{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
     }
 }
 

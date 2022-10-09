@@ -29,9 +29,9 @@ function onNavigate(pathName) {
     root.appendChild(pageRender)
 }
 
-function toggleMenu(menuHidden, btn) {
+function toggleMenu(menuHidden) {
     menuHidden.classList.toggle('sideMenu_hidden')
-    btn.classList.toggle('sideMenu_hidden')
+    // btn.classList.toggle('sideMenu_hidden')
 }
 
 function deployUploadPost(main) {

@@ -38,10 +38,13 @@ const createWallPage = () =>{
     const menuHidden = wallPageContainer.querySelector('.sideMenu')
     
     
+    //open menu
     btnMenu.addEventListener('click', ()=>{
+        console.log('open menu')
         toggleMenu(menuHidden, btnMenu)
     })
     
+    //close menu
     wallPageContainer.querySelector('#exitMenu').addEventListener('click', () => {
         console.log('cerrar menu')
         toggleMenu(menuHidden, btnMenu)

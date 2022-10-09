@@ -1,23 +1,25 @@
 .sideMenu {
   width: 70%;
-  max-width: 400px;
   min-height: 100vh;
-  /* max-height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: start;
+  padding: 50px 0;
+  max-width: 400px;
   gap: 40px;
-  background: #ece7f1b2;
+  background: #ece7f1;
   color: #5F15AD;
   position: absolute;
   left: 0;
   top: 0;
-  overflow: hidden;
-  transition: all 0.4s; }
+  transition: width 0.5s , opacity 0.3s;
+  opacity: 1; }
   .sideMenu_hidden {
-    min-height: 0px;
-    max-height: 0px; }
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s , opacity 0.2s 0.1S; }
   .sideMenu_exitMenu {
     width: 20px;
     max-width: 40px;
@@ -33,7 +35,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px; }
+    gap: 10px;
+    padding-top: 50px; }
   .sideMenu_menu {
     width: 100%;
     display: flex;
@@ -55,6 +58,11 @@
       max-width: 50px;
       min-height: 30px;
       max-height: 50px; }
+
+.sideMenu_imgUsername {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; }
 
 @media (min-width: 1024px) {
   .sideMenu {
