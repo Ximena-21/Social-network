@@ -86,8 +86,13 @@
         font-style: italic;
     }
     &_interactionBox{
-        @include flex-column-row;
+        // @include flex-column-row;
+        display: flex;
+        justify-content: space-between;
         gap: 5px;
+        width: 100%;
+        padding: 0px 20px;
+
     }
     &_icon{
         width: 20px;
