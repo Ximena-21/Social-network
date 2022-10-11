@@ -176,6 +176,7 @@ const provider = new GoogleAuthProvider();
 function logout () {
     return signOut(auth).then(() => {
       console.log('Sign-out successful.')
+      onNavigate('/login')
     })
 }
 
