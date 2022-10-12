@@ -1,4 +1,7 @@
+import { deletePost, desLikesPost, likesPost } from "../firebase/posts.js"
 import { deployEditPost } from "../lib/helpers.js"
+
+
 
 const Post = (userPost) => {
     const postContainer = document.createElement('div')
@@ -60,6 +63,31 @@ const Post = (userPost) => {
     //e.preventDefault()
     const main = document.querySelector('#root')
     deployEditPost(main, userPost)
+    })
+
+    postContainer.querySelector('#delete').addEventListener('click', (e) =>{
+        // console.log(userPost.id)
+        deletePost(userPost.id)
+
+    })
+
+    postContainer.querySelector('#like').addEventListener('click', (e) => {
+        const likeArray = userPost.likes
+    
+        if(likeArray.includes()){
+            
+            desLikesPost()
+        }
+        else{
+            
+            likesPost(userPost.id)
+        }
+
+        // if (likeIds.includes(userInfoId)) {
+        //     dislikes(liked, userInfoId);
+        //   } else {
+        //     likes(liked, userInfoId);
+        //   }
     })
 
 
