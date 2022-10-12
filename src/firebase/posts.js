@@ -13,6 +13,9 @@ import {
     doc, 
     getDoc, 
     setDoc,
+    deleteDoc,
+    arrayUnion,
+    arrayRemove,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 //import { currentUser, } from "./authentication.js";
 import { db, auth } from "./config.js";
@@ -75,6 +78,32 @@ function updatePost (idPost, dataUpdated) {
 
 
 //eliminar post 
+function deletePost (idPost) {
+    const postRefDelete = collection(db, 'posts')
+
+    return deleteDoc(doc(postRefDelete, idPost));
+}
+
+//dar me gusta
+function likesPost (idPost) {
+    const idUser = auth.currentUser.uid
+    const postRefLikes = collection(db, 'posts')
+
+    // console.log("ESTE USUARIO ESTA DANDO LIKE", idPost, idUser)
+
+    return updateDoc(doc(postRefLikes, idPost), { likes: arrayUnion(idUser) } )
+    
+    // { like: arrayUnion(idUser) }
+}
+// quitar el me gusta
+function desLikesPost (idPost) {
+    const idUser = auth.currentUser.uid
+    const postRefLikes = collection(db, 'posts')
+
+    // console.log("ESTE USUARIO ESTA DANDO LIKE", idPost, idUser)
+
+    return updateDoc(doc(postRefLikes, idPost), { likes: arrayRemove(idUser) } )
+}
 
 
 //renderizar -----> real time para los post
@@ -148,5 +177,8 @@ export {
     getMyPosts,
     setPostFireBase,
     updatePost, 
-    accessPostEdit
+    accessPostEdit,
+    deletePost,
+    likesPost,
+    desLikesPost
 }
