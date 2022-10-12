@@ -62,6 +62,9 @@ const Post = (userPost) => {
     deployEditPost(main, userPost)
     })
 
+
+    //llams el boton y le asignas la funcion 
+
     return postContainer
 }
 
