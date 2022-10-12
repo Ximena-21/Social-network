@@ -74,6 +74,9 @@ function updatePost (idPost, dataUpdated) {
 }
 
 
+//eliminar post 
+
+
 //renderizar -----> real time para los post
 function subscribeToRealTimePosts(callback) {
 
