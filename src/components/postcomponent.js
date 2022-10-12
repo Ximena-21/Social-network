@@ -15,6 +15,7 @@ const Post = (userPost) => {
         <div class="postContainer_headerPost">
             <div postContainer_editBox>
                 <img src="../img/edit.png" alt="" class="postContainer_editIcon" id="edit">
+                <img src="../img/delete.png" alt="" class="postContainer_editIcon" id="delete">
             </div>
             <div class="postContainer_userBox">
                 <img src="${userPost.user.photoUser || '../img/avatar.png'}" alt="" class="postContainer_user">

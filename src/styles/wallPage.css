@@ -72,7 +72,12 @@
     justify-content: space-between;
     padding: 5px 10px; }
   .postContainer_editBox {
-    padding: 10px; }
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px; }
   .postContainer_editIcon {
     width: 20px; }
   .postContainer_userBox {

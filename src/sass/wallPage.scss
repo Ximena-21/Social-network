@@ -75,6 +75,8 @@
     }
     &_editBox{
         padding: 10px;
+        @include flex-column-row;
+        gap: 20px;
     }
     &_editIcon{
         width: 20px;
