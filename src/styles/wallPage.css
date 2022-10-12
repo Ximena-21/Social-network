@@ -68,8 +68,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     padding: 5px 10px; }
+  .postContainer_editBox {
+    padding: 10px; }
+  .postContainer_editIcon {
+    width: 20px; }
   .postContainer_userBox {
     display: flex;
     align-items: center;

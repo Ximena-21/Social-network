@@ -1,10 +1,40 @@
 
-import {  onSnapshot, collection, query, orderBy, limit, where, getDocs} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
-import { db } from "./config.js";
+import { onSnapshot, collection, query, orderBy, limit, where, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+//import { currentUser, } from "./authentication.js";
+import { db, auth } from "./config.js";
 // import { getDatabase } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 
 
-//crear
+//crear post
+async function setPostFireBase(url, text) {
+
+    const actuallyUser = auth.currentUser
+    const dataPost = {
+        image: url,
+        description: text,
+        user: {
+            idUser: actuallyUser.uid,
+            displayName: actuallyUser.displayName,
+            photoUser: actuallyUser.photoURL 
+        },
+        likes: [],
+        comment: [],
+        time: Timestamp.fromDate(new Date()),
+    }
+
+    const postRef = await addDoc(collection(db, "posts"), dataPost)
+
+    dataPost.idPost = postRef.id
+
+    console.log({
+        //idPost: postRef.id,
+        post: dataPost,
+        //POSTREF: postRef,
+        // time: time,
+        // otro: otherTime
+    })
+}
+
 //actualizar
 //leer
 //borrar
@@ -23,18 +53,18 @@ import { db } from "./config.js";
 //----------------------------------------------------------
 
 
+//real time para los post
+function subscribeToRealTimePosts(callback) {
 
-function subscribeToRealTimePosts (callback) {
+    const postsRef = collection(db, 'posts')
 
-    const postsRef = collection(db,'posts')
-
-    const orderedPosts = query(postsRef,orderBy('time','desc'),limit(20))
+    const orderedPosts = query(postsRef, orderBy('time', 'desc'), limit(20))
 
     console.log('vamos apedir la data de nuevo')
 
     const unsub = onSnapshot(orderedPosts, (result) => {
 
-        const posts = result.docs.map(post=> post.data())
+        const posts = result.docs.map(post => post.data())
 
         callback(posts)
 
@@ -44,19 +74,19 @@ function subscribeToRealTimePosts (callback) {
 }
 
 //perfil .... 
-function getMyPosts (idUser){
-    
-    const postsRef = collection(db,'posts')
+function getMyPosts(idUser) {
+
+    const postsRef = collection(db, 'posts')
 
 
-    const myPosts = query(postsRef,where('emailUser', "==",'alguien@algo.com'),limit(20))
+    const myPosts = query(postsRef, where('emailUser', "==", 'alguien@algo.com'), limit(20))
 
 
-    return getDocs(myPosts).then((datos)=>{
+    return getDocs(myPosts).then((datos) => {
 
         const posts = datos.docs.map(post => {
             return post.data()
-          })
+        })
 
         return posts
 
@@ -76,14 +106,15 @@ function getMyPosts (idUser){
 
 //editar post >> hacer un comentario o dar like
 
-    //comentar
+//comentar
 
-    //like
+//like
 
 
 
 
 export {
     subscribeToRealTimePosts,
-    getMyPosts
+    getMyPosts,
+    setPostFireBase
 }

@@ -11,9 +11,12 @@ const Post = (userPost) => {
     postContainer.innerHTML = `
 
         <div class="postContainer_headerPost">
+            <div postContainer_editBox>
+                <img src="../img/edit.png" alt="" class="postContainer_editIcon" id="edit">
+            </div>
             <div class="postContainer_userBox">
-                <img src="../img/avatar.png" alt="" class="postContainer_user">
-                <span class="postContainer_userName">${userPost.nameUser}</span>
+                <img src="${userPost.user.photoUser || '../img/avatar.png'}" alt="" class="postContainer_user">
+                <span class="postContainer_userName">${userPost.user.displayName}</span>
             </div>
         </div>
 
@@ -45,7 +48,9 @@ const Post = (userPost) => {
         </div>
             
     `
-
+    postContainer.querySelector('#edit').addEventListener('click', (e)=>{
+        console.log(e)
+    })
     return postContainer
 }
 

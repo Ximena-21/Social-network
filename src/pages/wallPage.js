@@ -1,7 +1,7 @@
 import { Post } from "../components/postcomponent.js";
 import { sideMenu,} from "../components/sideMenu.js";
 import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
-import { deployUploadPost, onNavigate, toggleMenu } from "../helpers.js";
+import { deployUploadPost, onNavigate, toggleMenu } from "../lib/helpers.js";
 
 
 const createWallPage = () =>{

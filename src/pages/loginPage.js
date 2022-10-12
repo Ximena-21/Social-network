@@ -1,5 +1,5 @@
 import { singIn, singInGoogle} from "../firebase/authentication.js"
-import { onNavigate } from "../helpers.js"
+import { onNavigate } from "../lib/helpers.js"
 
 
 

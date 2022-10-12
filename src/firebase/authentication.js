@@ -12,7 +12,7 @@ import {
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
-import { onNavigate } from "../helpers.js";
+import { onNavigate } from "../lib/helpers.js";
 import { auth } from "./config.js";
 
 
@@ -57,13 +57,13 @@ import { auth } from "./config.js";
 
 //.............OBTENER USUSRIOS CON SESION ACTIVA.............
 //configurar observador de autenticacion y obtecion de datos del usuario --> para obtener el ususario actual
+
+
 onAuthStateChanged(auth, (user) =>{
 
     onNavigate(window.location.pathname)
 
     if (user) {
-
-        console.log('auth currentuser',user)
 
         const actuallyPath = window.location.pathname
 
@@ -73,10 +73,6 @@ onAuthStateChanged(auth, (user) =>{
         }
 
     } else {
-
-      //no esta logueado
-
-      //no puede estar en x routes
 
       const actuallyPath = window.location.pathname
 
@@ -103,6 +99,7 @@ function registerUser(name='',email='',password='') {
       const randomColor = Math.floor(Math.random()*16777215).toString(16)
       const gravatar= `https://ui-avatars.com/api/?name=${nameForAvatar}&background=${randomColor}`
 
+      //actualizar informacion del usuario
       return updateProfile(user,{
         displayName: name, 
         photoURL: gravatar,
@@ -138,7 +135,6 @@ function singIn (email,password) {
   .then((loggedUser) => {
     // Signed in
     const user = loggedUser.user;
-    console.log(user)
     return {data: user}
   })
   .catch((error) => {
@@ -185,5 +181,5 @@ export {
   registerUser,
   singIn,
   singInGoogle,
-  logout
+  logout, 
 }

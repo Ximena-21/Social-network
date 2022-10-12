@@ -1,9 +1,9 @@
-import { createLandingPage } from "./pages/landingPage.js"
-import { createLoginPage } from "./pages/loginPage.js"
-import { createRegisterPage } from "./pages/registerPage.js"
-import { createProfilePage } from "./pages/profilePage.js"
-import { createWallPage } from "./pages/wallPage.js"
-import { uploadPost } from "./components/uploadPost.js"
+import { createLandingPage } from "../pages/landingPage.js"
+import { createLoginPage } from "../pages/loginPage.js"
+import { createRegisterPage } from "../pages/registerPage.js"
+import { createProfilePage } from "../pages/profilePage.js"
+import { createWallPage } from "../pages/wallPage.js"
+import { uploadPost } from "../components/uploadPostContainer.js"
 
 const root = document.getElementById('root')
 
@@ -51,9 +51,13 @@ function deployUploadPost(main) {
     console.log('boton cerrar ventana', btnCloseWindowPost)
 }
 
+function editPost (){
+    
+}
+
 export {
     onNavigate,
     routes,
     toggleMenu,
-    deployUploadPost
+    deployUploadPost, 
 }

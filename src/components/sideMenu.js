@@ -5,6 +5,7 @@ const sideMenu = () => {
     const sideMenu = document.createElement('div')
 
     const user = auth.currentUser
+    console.log('USUARIO', user)
     
     sideMenu.className = 'sideMenu sideMenu_hidden'
 

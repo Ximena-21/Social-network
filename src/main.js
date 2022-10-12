@@ -2,7 +2,7 @@
 
 // import { onNavigate } from "./helpers.js"
 // import * as firebase from "./firebase/authentication.js"
-import {routes}  from "./helpers.js"
+import {routes}  from "./lib/helpers.js"
 
 window.addEventListener('popstate',(e)=>{
     root.innerHTML = ''

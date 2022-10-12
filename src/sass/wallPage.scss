@@ -69,8 +69,15 @@
     &_headerPost{
         width: 100%;
         @include flex-column-row;
+        flex-direction: row-reverse;
         justify-content: space-between;
         padding: 5px 10px;
+    }
+    &_editBox{
+        padding: 10px;
+    }
+    &_editIcon{
+        width: 20px;
     }
     &_userBox{
         @include flex-column-row;
