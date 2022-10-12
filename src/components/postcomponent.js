@@ -1,8 +1,10 @@
+import { deployEditPost } from "../lib/helpers.js"
 
 const Post = (userPost) => {
     const postContainer = document.createElement('div')
     postContainer.className = 'postContainer'
 
+   // const post = userPost.user
 
     console.log(userPost)
 
@@ -51,6 +53,14 @@ const Post = (userPost) => {
     postContainer.querySelector('#edit').addEventListener('click', (e)=>{
         console.log(e)
     })
+
+     //inyectando la ventana para editar post 
+    postContainer.querySelector('#edit').addEventListener('click', (e)=>{
+    //e.preventDefault()
+    const main = document.querySelector('#root')
+    deployEditPost(main, userPost)
+    })
+
     return postContainer
 }
 

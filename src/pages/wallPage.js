@@ -59,14 +59,14 @@ const createWallPage = () =>{
         onNavigate('/wall')
     })
 
+    //inyectando la ventana para subir post 
     wallPageContainer.querySelector('#uploadPost').addEventListener('click', (e)=>{
         //e.preventDefault()
         const main = document.querySelector('#root')
         deployUploadPost(main)
     })
 
-
-
+   
     const postContainer = wallPageContainer.querySelector('.wallPage_wallPost')
     //.appendChild(post())
     // const post = renderPost(postContainer)

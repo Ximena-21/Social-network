@@ -5,6 +5,7 @@
 @import url("./wallPage.css");
 @import url("./sideMenu.css");
 @import url("./uploadPost.css");
+@import url("./editPost.css");
 * {
   box-sizing: border-box;
   padding: 0;

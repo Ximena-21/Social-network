@@ -4,6 +4,7 @@ import { createRegisterPage } from "../pages/registerPage.js"
 import { createProfilePage } from "../pages/profilePage.js"
 import { createWallPage } from "../pages/wallPage.js"
 import { uploadPost } from "../components/uploadPostContainer.js"
+import { editPost } from "../components/editPostContainer.js"
 
 const root = document.getElementById('root')
 
@@ -51,13 +52,25 @@ function deployUploadPost(main) {
     console.log('boton cerrar ventana', btnCloseWindowPost)
 }
 
-function editPost (){
-    
+function deployEditPost(main, post) {
+
+    const editPostWindow = editPost(post)
+ 
+    main.appendChild(editPostWindow)
+    const btnCloseWindowPost = document.querySelector('#btnClose')
+    btnCloseWindowPost.addEventListener('click', () => {
+        editPostWindow.remove()
+    })
 }
+
+// function editPost (){
+    
+// }
 
 export {
     onNavigate,
     routes,
     toggleMenu,
-    deployUploadPost, 
+    deployUploadPost,
+    deployEditPost, 
 }

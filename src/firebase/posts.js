@@ -1,5 +1,19 @@
 
-import { onSnapshot, collection, query, orderBy, limit, where, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { 
+    onSnapshot, 
+    collection, 
+    query, 
+    orderBy, 
+    limit, 
+    where, 
+    getDocs, 
+    addDoc, 
+    Timestamp, 
+    updateDoc,
+    doc, 
+    getDoc, 
+    setDoc,
+} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 //import { currentUser, } from "./authentication.js";
 import { db, auth } from "./config.js";
 // import { getDatabase } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
@@ -7,10 +21,11 @@ import { db, auth } from "./config.js";
 
 //crear post
 async function setPostFireBase(url, text) {
-
+    const dbCollection = collection(db, "posts")
     const actuallyUser = auth.currentUser
     const dataPost = {
         image: url,
+        idPost: '',
         description: text,
         user: {
             idUser: actuallyUser.uid,
@@ -22,38 +37,44 @@ async function setPostFireBase(url, text) {
         time: Timestamp.fromDate(new Date()),
     }
 
-    const postRef = await addDoc(collection(db, "posts"), dataPost)
+    const postRef = await addDoc(dbCollection, dataPost)
+    //console.log(postRef.id)
 
-    dataPost.idPost = postRef.id
+    // const newRef = doc(dbCollection)
+    // const addIdPost = await setDoc(newRef, postRef.id)
 
-    console.log({
-        //idPost: postRef.id,
-        post: dataPost,
-        //POSTREF: postRef,
-        // time: time,
-        // otro: otherTime
-    })
+    // console.log('addIdPost', addIdPost)
+
+    //dataPost.idPost = postRef.id
+
+    // console.log({
+    //     //idPost: postRef.id,
+    //     post: dataPost,
+    //     //POSTREF: postRef,
+    //     // time: time,
+    //     // otro: otherTime
+    // })
 }
 
-//actualizar
-//leer
-//borrar
+//traer post a editar de firebase
+function accessPostEdit (idPost) {
+    const postRef = collection(db, 'posts')
+
+    return getDoc(doc(postRef, idPost))
+}
 
 
-//POSTS
+//editar post y guardar cambios
+function updatePost (idPost, dataUpdated) {
+    const postRef = collection(db, 'posts')
+
+    return updateDoc(doc(postRef,idPost), dataUpdated)
 
 
-
-// OBTENER BASE DE DATOS 
-
-// // Initialize Cloud Firestore and get a reference to the service
-//const db = firebase.firestore();
+}
 
 
-//----------------------------------------------------------
-
-
-//real time para los post
+//renderizar -----> real time para los post
 function subscribeToRealTimePosts(callback) {
 
     const postsRef = collection(db, 'posts')
@@ -64,7 +85,13 @@ function subscribeToRealTimePosts(callback) {
 
     const unsub = onSnapshot(orderedPosts, (result) => {
 
-        const posts = result.docs.map(post => post.data())
+        const posts = result.docs.map(post => {
+            console.log('ESTE ES CADA', post.id)
+            
+            return {...post.data(), id: post.id}
+            
+            
+        })
 
         callback(posts)
 
@@ -116,5 +143,7 @@ function getMyPosts(idUser) {
 export {
     subscribeToRealTimePosts,
     getMyPosts,
-    setPostFireBase
+    setPostFireBase,
+    updatePost, 
+    accessPostEdit
 }
