@@ -87,11 +87,12 @@ function deletePost (idPost) {
 //dar me gusta
 function likesPost (idPost) {
     const idUser = auth.currentUser.uid
-    const postRefLikes = collection(db, 'posts')
+    const postCollection = collection(db, 'posts')
+    const postRef= doc(postCollection, idPost)
 
     // console.log("ESTE USUARIO ESTA DANDO LIKE", idPost, idUser)
 
-    return updateDoc(doc(postRefLikes, idPost), { likes: arrayUnion(idUser) } )
+    return updateDoc(postRef, { likes: arrayUnion(idUser) } )
     
     // { like: arrayUnion(idUser) }
 }
@@ -118,7 +119,7 @@ function subscribeToRealTimePosts(callback) {
     const unsub = onSnapshot(orderedPosts, (result) => {
 
         const posts = result.docs.map(post => {
-            console.log('ESTE ES CADA', post.id)
+            //console.log('ESTE ES CADA', post.id)
             
             return {...post.data(), id: post.id}
             

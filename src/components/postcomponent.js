@@ -1,9 +1,13 @@
+import { auth } from "../firebase/config.js"
 import { deletePost, desLikesPost, likesPost } from "../firebase/posts.js"
 import { deployEditPost } from "../lib/helpers.js"
 
 
 
 const Post = (userPost) => {
+    const idUser = auth.currentUser.uid
+    //console.log('id del usuario', idUser)
+
     const postContainer = document.createElement('div')
     postContainer.className = 'postContainer'
 
@@ -17,8 +21,8 @@ const Post = (userPost) => {
 
         <div class="postContainer_headerPost">
             <div postContainer_editBox>
-                <img src="../img/edit.png" alt="" class="postContainer_editIcon" id="edit">
-                <img src="../img/delete.png" alt="" class="postContainer_editIcon" id="delete">
+                <img src="" alt="" class="postContainer_editIcon" id="edit">
+                <img src="" alt="" class="postContainer_editIcon" id="delete">
             </div>
             <div class="postContainer_userBox">
                 <img src="${userPost.user.photoUser || '../img/avatar.png'}" alt="" class="postContainer_user">
@@ -54,9 +58,24 @@ const Post = (userPost) => {
         </div>
             
     `
-    postContainer.querySelector('#edit').addEventListener('click', (e)=>{
-        console.log(e)
-    })
+ 
+    //condicionar que los iconos solo aprezcan, si el idUser, coincide con el idUser del post
+    const editIcon = postContainer.querySelector('#edit')
+    const deleteIcon = postContainer.querySelector('#delete')
+   
+    // console.log({
+    //     BTNeDIT: editIcon.src, 
+    //     BTNdELETE: deleteIcon.src,
+    //     IDuSERsess: idUser,
+    //     IDuserPOST: userPost.user.idUser,
+    // })
+   
+    if(idUser===userPost.user.idUser){
+        editIcon.src = '../img/edit.png'
+        deleteIcon.src = '../img/delete.png'
+    }
+
+
 
      //inyectando la ventana para editar post 
     postContainer.querySelector('#edit').addEventListener('click', (e)=>{
@@ -72,22 +91,17 @@ const Post = (userPost) => {
     })
 
     postContainer.querySelector('#like').addEventListener('click', (e) => {
+        
         const likeArray = userPost.likes
     
-        if(likeArray.includes()){
+        if(likeArray.includes(idUser)){
             
-            desLikesPost()
+            desLikesPost(userPost.id)
         }
         else{
             
             likesPost(userPost.id)
         }
-
-        // if (likeIds.includes(userInfoId)) {
-        //     dislikes(liked, userInfoId);
-        //   } else {
-        //     likes(liked, userInfoId);
-        //   }
     })
 
 

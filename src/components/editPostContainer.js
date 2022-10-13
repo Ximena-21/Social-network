@@ -1,5 +1,4 @@
 import { accessPostEdit, updatePost } from "../firebase/posts.js"
-import { changeUploadImg, uploadImgWeb } from "../lib/uploadPost.js"
 
 function editPost(post) {
     console.log({
@@ -11,7 +10,7 @@ function editPost(post) {
     editPostContainer.innerHTML = `
         <form action="" method="post" class="editPost_container">
             <button class="editPost_btnClosed" id="btnClose">x</button>
-            <input type="file" name="postImg" id="postImg" class="editPost_img">
+           
             <div  class="editPost_previewContainer" id="previewContainer" >
                 <img src="${post.image}" id="preview" class="editPost_preview"/>
             </div>
@@ -24,17 +23,17 @@ function editPost(post) {
     inputDescription.value = `${post.description}`
 
 
-   const formEditPost =  editPostContainer.querySelector('.editPost_container')
-    let urlImg = ""
-    editPostContainer.querySelector('#postImg').addEventListener('change', async (e) => {
+    const formEditPost =  editPostContainer.querySelector('.editPost_container')
+   // let urlImg = ""
+    // editPostContainer.querySelector('#postImg').addEventListener('change', async (e) => {
         
-        const image = await changeUploadImg(e)
+    //     const image = await changeUploadImg(e)
 
-        const urlImgWeb = await uploadImgWeb(image)
+    //     const urlImgWeb = await uploadImgWeb(image)
         
-        urlImg = urlImgWeb
+    //     urlImg = urlImgWeb
 
-    })  
+    // })  
 
     
     formEditPost.addEventListener('submit', (e)=>{
@@ -43,7 +42,7 @@ function editPost(post) {
         accessPostEdit(post.id).then(()=>{
             updatePost(post.id, {description: inputDescription.value })
         }).then(()=>{
-            
+            editPostContainer.remove()
         })
 
         // const description = document.querySelector('#postText').value
@@ -52,6 +51,9 @@ function editPost(post) {
 
     return editPostContainer
 }
+
+// <input type="file" name="postImg" id="postImg" class="editPost_img"> 
+//linea 14
 
 export{
     editPost

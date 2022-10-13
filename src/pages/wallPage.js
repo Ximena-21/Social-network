@@ -92,7 +92,7 @@ const createWallPage = () =>{
 
             if(post.time){
 
-                console.log(post.time.toDate())
+                //console.log(post.time.toDate())
             }
 
             postContainer.appendChild(postUser) // todos los post se pintan

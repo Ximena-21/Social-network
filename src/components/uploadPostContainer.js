@@ -35,6 +35,9 @@ function uploadPost() {
         e.preventDefault()
         const description = document.querySelector('#postText').value
         setPostFireBase(urlImg, description)
+        .then(()=>{
+            uploadPostContainer.remove()
+        })
     })
  
     return uploadPostContainer
