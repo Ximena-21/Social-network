@@ -1,17 +1,12 @@
 import { auth } from "../firebase/config.js"
-import { deletePost, desLikesPost, likesPost } from "../firebase/posts.js"
+import { addComment, deletePost, desLikesPost, likesPost } from "../firebase/posts.js"
 import { deployEditPost } from "../lib/helpers.js"
-
-
 
 const Post = (userPost) => {
     const idUser = auth.currentUser.uid
-    //console.log('id del usuario', idUser)
 
     const postContainer = document.createElement('div')
     postContainer.className = 'postContainer'
-
-   // const post = userPost.user
 
     console.log(userPost)
 
@@ -42,7 +37,9 @@ const Post = (userPost) => {
 
             <div>
                 <img src="../img/commet.png" alt="comment" class="postContainer_icon" id= "comment">
-                <input type='text' placeholder='comentario'/>
+                <form action="" method="commentPost" class="postContainer_comment" id='formComment'>
+                    <input required type='text' placeholder='comentario' id='textComment'/>
+                </form>
             </div>
 
             <div>
@@ -55,42 +52,30 @@ const Post = (userPost) => {
         
         <div >
             <p>comentarios</p>
-        </div>
-            
+        </div>    
     `
- 
     //condicionar que los iconos solo aprezcan, si el idUser, coincide con el idUser del post
     const editIcon = postContainer.querySelector('#edit')
     const deleteIcon = postContainer.querySelector('#delete')
-   
-    // console.log({
-    //     BTNeDIT: editIcon.src, 
-    //     BTNdELETE: deleteIcon.src,
-    //     IDuSERsess: idUser,
-    //     IDuserPOST: userPost.user.idUser,
-    // })
    
     if(idUser===userPost.user.idUser){
         editIcon.src = '../img/edit.png'
         deleteIcon.src = '../img/delete.png'
     }
 
-
-
      //inyectando la ventana para editar post 
-    postContainer.querySelector('#edit').addEventListener('click', (e)=>{
-    //e.preventDefault()
+    postContainer.querySelector('#edit').addEventListener('click', ()=>{
+
     const main = document.querySelector('#root')
     deployEditPost(main, userPost)
     })
 
-    postContainer.querySelector('#delete').addEventListener('click', (e) =>{
-        // console.log(userPost.id)
+    postContainer.querySelector('#delete').addEventListener('click', () =>{
         deletePost(userPost.id)
 
     })
 
-    postContainer.querySelector('#like').addEventListener('click', (e) => {
+    postContainer.querySelector('#like').addEventListener('click', () => {
         
         const likeArray = userPost.likes
     
@@ -104,8 +89,16 @@ const Post = (userPost) => {
         }
     })
 
+    postContainer.querySelector('#formComment').addEventListener('submit', (e)=>{
+        e.preventDefault()
+        const text = postContainer.querySelector('#textComment').value
 
-    //llams el boton y le asignas la funcion 
+        addComment(userPost.id, text).then(()=>{
+            console.log('se agrego comentario')
+        })
+
+    })
+
 
     return postContainer
 }

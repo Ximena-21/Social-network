@@ -17,14 +17,14 @@ import {
     arrayUnion,
     arrayRemove,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
-//import { currentUser, } from "./authentication.js";
 import { db, auth } from "./config.js";
-// import { getDatabase } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 
+
+const postCollection = collection(db, 'posts') 
 
 //crear post
 async function setPostFireBase(url, text) {
-    const dbCollection = collection(db, "posts")
+    
     const actuallyUser = auth.currentUser
     const dataPost = {
         image: url,
@@ -40,94 +40,74 @@ async function setPostFireBase(url, text) {
         time: Timestamp.fromDate(new Date()),
     }
 
-    const postRef = await addDoc(dbCollection, dataPost)
-    //console.log(postRef.id)
-
-    // const newRef = doc(dbCollection)
-    // const addIdPost = await setDoc(newRef, postRef.id)
-
-    // console.log('addIdPost', addIdPost)
-
-    //dataPost.idPost = postRef.id
-
-    // console.log({
-    //     //idPost: postRef.id,
-    //     post: dataPost,
-    //     //POSTREF: postRef,
-    //     // time: time,
-    //     // otro: otherTime
-    // })
+    const postRef = await addDoc(postCollection, dataPost)
 }
 
 //traer post a editar de firebase
 function accessPostEdit (idPost) {
-    const postRef = collection(db, 'posts')
 
-    return getDoc(doc(postRef, idPost))
+    return getDoc(doc(postCollection, idPost))
 }
-
 
 //editar post y guardar cambios
 function updatePost (idPost, dataUpdated) {
-    const postRef = collection(db, 'posts')
 
-    return updateDoc(doc(postRef,idPost), dataUpdated)
-
-
+    return updateDoc(doc(postCollection,idPost), dataUpdated)
 }
-
 
 //eliminar post 
 function deletePost (idPost) {
-    const postRefDelete = collection(db, 'posts')
 
-    return deleteDoc(doc(postRefDelete, idPost));
+    return deleteDoc(doc(postCollection, idPost));
 }
 
 //dar me gusta
 function likesPost (idPost) {
+   
     const idUser = auth.currentUser.uid
-    const postCollection = collection(db, 'posts')
     const postRef= doc(postCollection, idPost)
 
-    // console.log("ESTE USUARIO ESTA DANDO LIKE", idPost, idUser)
-
     return updateDoc(postRef, { likes: arrayUnion(idUser) } )
-    
-    // { like: arrayUnion(idUser) }
 }
+
 // quitar el me gusta
 function desLikesPost (idPost) {
+    
     const idUser = auth.currentUser.uid
-    const postRefLikes = collection(db, 'posts')
 
-    // console.log("ESTE USUARIO ESTA DANDO LIKE", idPost, idUser)
+    return updateDoc(doc(postCollection, idPost), { likes: arrayRemove(idUser) } )
+}
 
-    return updateDoc(doc(postRefLikes, idPost), { likes: arrayRemove(idUser) } )
+//agregar comentario
+function addComment (idPost, textComment) {
+    const idUser = auth.currentUser.uid
+    const postRef= doc(postCollection, idPost)
+
+    const dataComment = {
+        idUserC: idUser,
+        text: textComment
+    }
+
+    return updateDoc(postRef, { comment: arrayUnion(dataComment) } )
+
+    
 }
 
 
 //renderizar -----> real time para los post
 function subscribeToRealTimePosts(callback) {
 
-    const postsRef = collection(db, 'posts')
-
-    const orderedPosts = query(postsRef, orderBy('time', 'desc'), limit(20))
-
-    console.log('vamos apedir la data de nuevo')
+    const orderedPosts = query(postCollection, orderBy('time', 'desc'), limit(20))
 
     const unsub = onSnapshot(orderedPosts, (result) => {
 
         const posts = result.docs.map(post => {
-            //console.log('ESTE ES CADA', post.id)
-            
-            return {...post.data(), id: post.id}
-            
-            
+            //se esta tomando una copia de la data del post y se le esta incluyendo el id del post
+            //porque se necesitara mas tarde
+            return {...post.data(), id: post.id}         
         })
-
+        //fx que pintara cada post
         callback(posts)
-
     });
 
     return unsub
@@ -136,10 +116,7 @@ function subscribeToRealTimePosts(callback) {
 //perfil .... 
 function getMyPosts(idUser) {
 
-    const postsRef = collection(db, 'posts')
-
-
-    const myPosts = query(postsRef, where('emailUser', "==", 'alguien@algo.com'), limit(20))
+    const myPosts = query(postCollection, where('emailUser', "==", 'alguien@algo.com'), limit(20))
 
 
     return getDocs(myPosts).then((datos) => {
@@ -149,28 +126,9 @@ function getMyPosts(idUser) {
         })
 
         return posts
-
     })
 
-
-
 }
-
-
-//crear un post
-
-
-//eliminar un post
-
-
-
-//editar post >> hacer un comentario o dar like
-
-//comentar
-
-//like
-
-
 
 
 export {
@@ -181,5 +139,6 @@ export {
     accessPostEdit,
     deletePost,
     likesPost,
-    desLikesPost
+    desLikesPost, 
+    addComment 
 }
