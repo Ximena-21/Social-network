@@ -1,4 +1,8 @@
-const postProfile = () =>{
+//import { auth } from "../firebase/config.js"
+
+
+function postProfile () {
+
     const postProfileContainer = document.createElement('div')
     postProfileContainer.className = 'postProfile'
 

@@ -6,6 +6,10 @@
 @import url("./sideMenu.css");
 @import url("./uploadPost.css");
 @import url("./editPost.css");
+@import url("./comment.css");
+@import url("./post.css");
+@import url("./editComment.css");
+@import url("./profile.css");
 * {
   box-sizing: border-box;
   padding: 0;

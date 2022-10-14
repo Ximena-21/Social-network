@@ -1,0 +1,84 @@
+.profilePage {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative; }
+  .profilePage_headerBox {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: #ECE7F1;
+    position: fixed;
+    top: 0; }
+  .profilePage_logo {
+    width: 50px; }
+  .profilePage_menuHidden {
+    width: 30px; }
+  .profilePage_usernameBox {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 60px; }
+  .profilePage_imgUsername {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; }
+  .profilePage_textUsername {
+    font-size: 16px;
+    color: #5F15AD;
+    text-align: center; }
+  .profilePage_wallPost {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px 0;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .profilePage_footerMenu {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #3B007A;
+    position: fixed;
+    bottom: 0; }
+  .profilePage_footerMenu--icon {
+    width: 20px;
+    max-width: 40px;
+    min-height: 20px;
+    max-height: 40px;
+    border-style: none;
+    cursor: pointer; }
+
+.icon_search {
+  background: url(../img/search.png) no-repeat center/cover; }
+
+.icon_home {
+  background: url(../img/homeFooter.png) no-repeat center/cover; }
+
+.icon_uploadPost {
+  background: url(../img/share.png) no-repeat center/cover; }
+
+.icon_profile {
+  background: url(../img/user.png) no-repeat center/cover; }
+
+.footerMenu_Hidden {
+  width: 0; }

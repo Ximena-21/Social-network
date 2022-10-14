@@ -1,0 +1,50 @@
+.comment {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #b7b7b7;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative; }
+  .comment_boxComment {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .comment_userComment {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 10px;
+    gap: 5px; }
+  .comment_photoUser {
+    width: 15px;
+    max-width: 30px;
+    min-height: 15px;
+    max-height: 30px; }
+  .comment_nameUser {
+    font-size: 14px; }
+  .comment_txtComment {
+    width: 100%;
+    padding: 10px;
+    text-align: justify;
+    font-size: 18px; }
+  .comment_editComent--box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .comment_icon {
+    width: 20px; }
