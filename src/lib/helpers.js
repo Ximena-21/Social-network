@@ -5,6 +5,8 @@ import { createProfilePage } from "../pages/profilePage.js"
 import { createWallPage } from "../pages/wallPage.js"
 import { uploadPost } from "../components/uploadPostContainer.js"
 import { editPost } from "../components/editPostContainer.js"
+import { commentComponent } from "../components/commentComponent.js"
+import { editCommentComponent } from "../components/editComment.js"
 
 const root = document.getElementById('root')
 
@@ -37,19 +39,13 @@ function toggleMenu(menuHidden) {
 
 function deployUploadPost(main) {
 
-    console.log('voy a sacar ventana para subir post', main)
-
     const uploadPostWindow = uploadPost()
-    // document.querySelector("#btnClose").addEventListener('click', () => {
-    //     uploadPostContainer.remove()
-    // })
 
     main.appendChild(uploadPostWindow)
     const btnCloseWindowPost = document.querySelector('#btnClose')
     btnCloseWindowPost.addEventListener('click', () => {
         uploadPostWindow.remove()
     })
-    console.log('boton cerrar ventana', btnCloseWindowPost)
 }
 
 function deployEditPost(main, post) {
@@ -63,9 +59,19 @@ function deployEditPost(main, post) {
     })
 }
 
-// function editPost (){
-    
-// }
+
+function rendercomment (comments, container, userCurrent) {
+
+    if(comments === undefined || comments.length === 0){
+        container.textContent = ''
+    } else {
+        comments.forEach((comment)=>{
+            const commentBox = commentComponent(comment, userCurrent)
+            container.appendChild(commentBox)
+        })
+    }    
+}
+
 
 export {
     onNavigate,
@@ -73,4 +79,5 @@ export {
     toggleMenu,
     deployUploadPost,
     deployEditPost, 
+    rendercomment,
 }

@@ -1,9 +1,9 @@
 import { accessPostEdit, updatePost } from "../firebase/posts.js"
 
 function editPost(post) {
-    console.log({
-        POST: post,
-    })
+    // console.log({
+    //     POST: post,
+    // })
     const editPostContainer = document.createElement('div')
     editPostContainer.className = 'editPost'
 

@@ -80,18 +80,52 @@ function desLikesPost (idPost) {
 
 //agregar comentario
 function addComment (idPost, textComment) {
-    const idUser = auth.currentUser.uid
+    const user = auth.currentUser
     const postRef= doc(postCollection, idPost)
 
     const dataComment = {
-        idUserC: idUser,
+        idUserC: user.uid,
+        photoUser: user.photoURL,
+        nameUser: user.displayName,
         text: textComment
     }
 
     return updateDoc(postRef, { comment: arrayUnion(dataComment) } )
 
-    
 }
+
+// function editComment(comment) {
+    
+//     const inputComment = document.querySelector('#textComment')
+//     inputComment.value = comment.text
+
+
+//     // const edittWindow = editCommentComponent(comment)
+    
+//     // main.appendChild(edittWindow)
+//     // const btnCloseWindowPost = document.querySelector('#closeEdit')
+//     // btnCloseWindowPost.addEventListener('click', () => {
+//     //     edittWindow.remove()
+//     // })
+// }
+
+// //traer comentario de firebase
+// function accessCommentEdit (comment) {
+
+//     return getDoc(doc(postCollection, comment))
+// }
+
+// //editar guardar cambios comentario
+// function updateComment (idPost, dataUpdated) {
+
+//     return updateDoc(doc(postCollection,idPost), dataUpdated)
+// }
+
+// //eliminar comentario
+// function deleteComment (comment) {
+//     console.log('este es el comentario en la funcion eliminar', comment.indexOf())
+//    // return deleteDoc(doc(postCollection, comment));
+// }
 
 
 //renderizar -----> real time para los post
@@ -113,10 +147,10 @@ function subscribeToRealTimePosts(callback) {
     return unsub
 }
 
-//perfil .... 
+
 function getMyPosts(idUser) {
 
-    const myPosts = query(postCollection, where('emailUser', "==", 'alguien@algo.com'), limit(20))
+    const myPosts = query(postCollection, where('user.idUser', "==", idUser.uid), limit(20))
 
 
     return getDocs(myPosts).then((datos) => {
@@ -130,6 +164,34 @@ function getMyPosts(idUser) {
 
 }
 
+//perfil .... 
+// async function getMyPosts(idUser) {
+
+//     const myPosts = query(postCollection, where('user.idUser', "==", 'idUser.uid'), limit(20))
+
+
+//    const querySnapshot =  await getDocs(myPosts)
+   
+//     const posts = querySnapshot.docs.map(post => post.data())
+
+//     console.log(posts)
+    
+// //    querySnapshot.forEach((data)=>{
+// //         const posts = datos.docs
+// //    })
+   
+// //    .then((datos) => {
+
+// //         const posts = datos.docs.map(post => {
+// //             return post.data()
+// //         })
+
+// //         //console.log('estos son tus post')
+// //         return posts
+// //     })
+
+// }
+
 
 export {
     subscribeToRealTimePosts,
@@ -140,5 +202,9 @@ export {
     deletePost,
     likesPost,
     desLikesPost, 
-    addComment 
+    addComment,
+    // accessCommentEdit,
+    // updateComment,
+    // deleteComment,
+    // editComment
 }

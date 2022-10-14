@@ -4,7 +4,7 @@ import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
 import { deployUploadPost, onNavigate, toggleMenu } from "../lib/helpers.js";
 
 
-const createWallPage = () =>{
+function createWallPage () {
 
     const wallPageContainer = document.createElement('div')
     wallPageContainer.className = 'wallPage'

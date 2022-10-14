@@ -1,11 +1,12 @@
 import { logout } from "../firebase/authentication.js"
 import { auth } from "../firebase/config.js"
+import { onNavigate } from "../lib/helpers.js"
 
 const sideMenu = () => {
     const sideMenu = document.createElement('div')
 
     const user = auth.currentUser
-    console.log('USUARIO', user)
+   // console.log('USUARIO', user)
     
     sideMenu.className = 'sideMenu sideMenu_hidden'
 
@@ -35,6 +36,9 @@ const sideMenu = () => {
     sideMenu.querySelector('.sideMenu_exit').addEventListener('click', ()=>{
         // closeMenu()
         logout()
+    })
+    sideMenu.querySelector('#profileTxt').addEventListener('click', ()=>{
+       onNavigate('/profile')
     })
 
     return sideMenu
