@@ -78,10 +78,6 @@ function createWallPage () {
     // })
     //postContainer.appendChild(post)
 
-    getMyPosts().then(datos=>{
-        console.log(datos,'my posts')
-    })
-
     //ejecuto la funcion que se subscribe y me ejecutara este callback cada que algo cambie.
     subscribeToRealTimePosts((posts)=>{
 

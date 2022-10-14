@@ -4,8 +4,8 @@
     width: 100%;
     max-width: 750px;
     @include flex-column-center;
-    justify-content: flex-start;
     position: relative;
+    
 
     &_headerBox {
         width: 100%;
@@ -30,9 +30,11 @@
 
     &_usernameBox{
         width: 80%;
+        max-width: 400px;
         @include flex-column-row;
         gap:15px;
-        margin-top: 60px
+        margin-top: 60px;
+        justify-content: flex-start;
     }
 
     &_imgUsername{
@@ -97,4 +99,45 @@
 
 .footerMenu_Hidden{
     width: 0;
+}
+
+
+@media (min-width: 1024px) {
+    .profilePage{
+        &_headerBox{
+            flex-direction: row;
+        }
+
+        
+        &_footerMenu{
+            top: 0;
+            width: 25%;
+            right: 0;
+            bottom: auto;
+            background: none;
+        }
+        &_menuHidden{
+            width: 0;
+        }
+    }
+
+    .sideMenu {
+        left: auto;
+    }
+
+    .icon{
+        &_search{
+            background: url(../img/searchPurple.png) no-repeat center/ cover;
+        }
+        &_home{
+            background: url(../img/homePurple.png) no-repeat center/ cover;
+        }
+        &_uploadPost{
+            background: url(../img/sharePurple.png) no-repeat center/ cover;
+        }
+        &_profile{
+            background: url(../img/profilePurple.png) no-repeat center/ cover;
+        }
+    }
+    
 }

@@ -1,9 +1,8 @@
 import { Post } from "../components/postcomponent.js";
-import { postProfile } from "../components/postProfile.js";
 import { sideMenu } from "../components/sideMenu.js";
 import { auth } from "../firebase/config.js";
 import { getMyPosts } from "../firebase/posts.js";
-import { onNavigate, toggleMenu } from "../lib/helpers.js";
+import { deployUploadPost, onNavigate, toggleMenu } from "../lib/helpers.js";
 
 function createProfilePage  () {
     
