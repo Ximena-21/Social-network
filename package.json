@@ -11,11 +11,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "htmlhint": "htmlhint dist/*.html ",
-    "eslint": "eslint --ext .js src/ test/",
-    "stylelint": "stylelint --aei src/**/*.css",
-    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
-    "test": "jest --coverage",
+   
+    "test": "jest --coverage --env=jsdom",
     "start": "serve -s src/",
     "sass": "node-sass --watch src/sass/ -o src/styles/"
   },
@@ -41,3 +38,4 @@
     "sass": "^1.55.0"
   }
 }
+

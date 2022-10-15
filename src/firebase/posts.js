@@ -87,39 +87,27 @@ function addComment (idPost, textComment) {
         idUserC: user.uid,
         photoUser: user.photoURL,
         nameUser: user.displayName,
-        text: textComment
+        text: textComment,
+        idComment: new Date().getTime()
+
     }
 
     return updateDoc(postRef, { comment: arrayUnion(dataComment) } )
 
 }
 
-// function editComment(comment) {
-    
-//     const inputComment = document.querySelector('#textComment')
-//     inputComment.value = comment.text
 
+//editar guardar cambios comentario
+function updateComment (post, dataUpdated) {
+    const comments = post.comment
+//const editComment = comments.find((comment)=>{
+//         if(comment.idComment === idComment) {
+//            return comment
+//         }
+//     })
 
-//     // const edittWindow = editCommentComponent(comment)
-    
-//     // main.appendChild(edittWindow)
-//     // const btnCloseWindowPost = document.querySelector('#closeEdit')
-//     // btnCloseWindowPost.addEventListener('click', () => {
-//     //     edittWindow.remove()
-//     // })
-// }
-
-// //traer comentario de firebase
-// function accessCommentEdit (comment) {
-
-//     return getDoc(doc(postCollection, comment))
-// }
-
-// //editar guardar cambios comentario
-// function updateComment (idPost, dataUpdated) {
-
-//     return updateDoc(doc(postCollection,idPost), dataUpdated)
-// }
+    return updateDoc(doc(postCollection, comments), dataUpdated)
+}
 
 // //eliminar comentario
 // function deleteComment (comment) {
@@ -138,6 +126,7 @@ function subscribeToRealTimePosts(callback) {
         const posts = result.docs.map(post => {
             //se esta tomando una copia de la data del post y se le esta incluyendo el id del post
             //porque se necesitara mas tarde
+            console.log('comment post', post.data().comment)
             return {...post.data(), id: post.id}         
         })
         //fx que pintara cada post
@@ -203,8 +192,7 @@ export {
     likesPost,
     desLikesPost, 
     addComment,
-    // accessCommentEdit,
-    // updateComment,
+    updateComment,
     // deleteComment,
     // editComment
 }

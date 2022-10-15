@@ -34,12 +34,17 @@
     flex-direction: row;
     gap: 5px; }
   .postContainer_user {
-    width: 20px; }
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; }
   .postContainer_userName {
     font-size: 14px;
     color: #5F15AD;
     font-weight: 600;
     font-style: italic; }
+  .postContainer_description {
+    width: 90%;
+    text-align: start; }
   .postContainer_icon {
     width: 20px;
     height: 20px; }
@@ -62,24 +67,18 @@
     justify-content: center;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0px 20px; }
-    .postContainer_interactionBox--comment {
-      width: 70%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      justify-content: flex-start;
-      gap: 10px; }
-    .postContainer_interactionBox--like {
-      width: 10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      justify-content: flex-end; }
+    padding: 0 10px 0 5px; }
+  .postContainer_interactionBox--comment {
+    width: 70%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #cecece 0px 1px 4px; }
   .postContainer_textComment {
-    border: none; }
+    border: none;
+    background: none; }
   .postContainer_iconComment {
     width: 20px;
     max-width: 30px;
@@ -91,4 +90,5 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px; }
+    gap: 10px;
+    padding: 0 5px; }

@@ -40,7 +40,7 @@ const Post = (userPost) => {
         <div class="postContainer_interactionBox">
 
             <form action="" method="commentPost" class="postContainer_interactionBox--comment" id='formComment'>
-                <input required type='text' placeholder='comentario' id='textComment' class="postContainer_textComment"/>
+                <input required type='text' placeholder='Añade un comentario' id='textComment' class="postContainer_textComment"/>
                 <img src="../img/commet.png" alt="comment" class="postContainer_icon" id= "comment" class="postContainer_iconComment">
             </form>
 
@@ -58,7 +58,7 @@ const Post = (userPost) => {
     `
 
     const commentsContainer = postContainer.querySelector('.postContainer_comments')
-    rendercomment(comments,commentsContainer, idUser.uid)
+    rendercomment(comments,commentsContainer, idUser.uid, userPost)
 
 
     

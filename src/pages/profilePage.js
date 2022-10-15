@@ -24,7 +24,7 @@ function createProfilePage  () {
         </div>
 
         <div class="profilePage_wallPost">
-
+            aqui van los post de este usuario
         </div>
 
         <div class="profilePage_footerMenu">
@@ -79,6 +79,7 @@ function createProfilePage  () {
     // postContainer.appendChild(postProfile())
 
     getMyPosts(user).then((myPosts)=>{
+        postContainer.innerHTML = ''
         console.log('estos son mis posts', myPosts)
         myPosts.forEach((post)=>{
             const renderPost = Post(post)

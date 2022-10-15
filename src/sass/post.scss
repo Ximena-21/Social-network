@@ -30,6 +30,8 @@
     }
     &_user{
         width: 20px;
+        height: 20px;
+        border-radius: 50%;
     }
     &_userName{
         font-size: 14px;
@@ -37,6 +39,13 @@
         font-weight: 600;
         font-style: italic;
     }
+
+    &_description{
+        width: 90%;
+        text-align: start;
+    }
+    
+    
 
     &_icon{
         width: 20px;
@@ -63,24 +72,36 @@
         width: 100%;
         @include flex-column-row;
         justify-content: space-between;
-        padding: 0px 20px;
+        padding: 0 10px 0 5px;
 
-        &--comment{
-            width: 70%;
-            @include flex-column-row;
-            justify-content: flex-start;
-            gap: 10px;
-        }
+        // &--comment{
+        //     width: 70%;
+        //     @include flex-column-row;
+        //     justify-content: flex-start;
+        //     gap: 10px;
+        // }
 
-        &--like{
-            width: 10%;
-            @include flex-column-row;
-            justify-content: flex-end;
-        }
+        // &--like{
+        //     width: 10%;
+        //     @include flex-column-row;
+        //     justify-content: flex-end;
+        // }
     }
+
+    &_interactionBox--comment{
+        width: 70%;
+        max-width: 300px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: #cecece 0px 1px 4px;
+    } 
+    
 
     &_textComment{
         border: none;
+        background: none;
     }
     &_iconComment{
         width: 20px;
@@ -93,5 +114,6 @@
         width: 100%;
         @include flex-column-center;
         gap: 10px;
+        padding: 0 5px;
     }
 }

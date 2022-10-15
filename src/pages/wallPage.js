@@ -16,7 +16,7 @@ function createWallPage () {
     </div>
 
     <div class="wallPage_wallPost">
-
+        aqui van los post 
     </div>
 
     <div class="wallPage_footerMenu">

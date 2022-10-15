@@ -73,7 +73,7 @@ function createLandingPage () {
                 </div>
             </div>
             <div class="footer_autor">
-                <p>Develop by Paula A. Stefany A. Natalia A. - All Rights Reserved</p>
+                <p>Develop by Paula A. Stefany A. - All Rights Reserved</p>
             </div>
     </footer>
     `

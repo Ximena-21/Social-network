@@ -1,9 +1,5 @@
-//import { editComment } from "../firebase/posts.js"
-// import { deleteComment } from "../firebase/posts.js"
-// import { editCommentComponent } from "./editComment.js"
-//import { deployEditComment } from "../lib/helpers.js"
 
-function commentComponent (comment, actuallyUser) {
+function commentComponent (comment, actuallyUser, post) {
     const commentContainer = document.createElement('div')
     commentContainer.className = 'comment'
 
@@ -35,27 +31,34 @@ function commentComponent (comment, actuallyUser) {
 
     editIcon.addEventListener('click', ()=>{
         console.log('QUIERE EDITAR EL COMENTARIO ', comment.text)
-        // const commentContent = commentContainer.querySelector('.comment_txtComment')
-        // // commentContent.remove()
+        const commentContent = commentContainer.querySelector('.comment_txtComment')
 
-        // commentContent.innerHTML = `
-        // <form action="" method="comment" id="formComment">
-        //     <input required type="text" name="commentText" id="postText" class="editComment_text">
-        // </form>
-        // `
-        // const input = commentContent.querySelector('postText')
-        // input.value = ""
+        commentContent.innerHTML = `
+        <form action="" method="comment" id="formComment">
+            <input required type="text" name="commentText" id="postText" class="editComment_text">
+        </form>
+        `
+        const input = commentContent.querySelector('#postText')
+        input.value = comment.text
 
-        // const form = commentContent.querySelector('formComment')
-        // form.addEventListener('submit', (e)=>{
-        //     e.preventDefault()
-        //     console.log('ENVIAR EDICION AL COMENTARIO')
+        const idCommentActually = comment.idComment
+
+        // comment.filter((element)=>{
+        //     if(element.idComment === idCommentActually) {
+        //         console.log('comentario encontrado', element)
+        //         return element
+        //     }
         // })
-        //const meterComentario = commentContainer.querySelector('comment_boxComment')
-        // meterComentario.appendChild(editCommentComponent(comment))
-        // deployEditComment(main, comment)
-        //editComment(comment)
+
+        console.log({
+            comentarios: comment,
+            idComentarioActual: idCommentActually,
+            post: post
+        })
+
     })
+
+
     deleteIcon.addEventListener('click', ()=>{
         console.log('QUIERE eliminar EL COMENTARIO ',)
         //deleteComment(comment)

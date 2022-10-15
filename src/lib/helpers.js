@@ -60,13 +60,13 @@ function deployEditPost(main, post) {
 }
 
 
-function rendercomment (comments, container, userCurrent) {
+function rendercomment (comments, container, userCurrent, post) {
 
     if(comments === undefined || comments.length === 0){
         container.textContent = ''
     } else {
         comments.forEach((comment)=>{
-            const commentBox = commentComponent(comment, userCurrent)
+            const commentBox = commentComponent(comment, userCurrent, post)
             container.appendChild(commentBox)
         })
     }    
