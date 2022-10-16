@@ -1,7 +1,21 @@
+import { deleteComment, updateComment } from "../firebase/posts.js"
 
 function commentComponent (comment, actuallyUser, post) {
+
+    const isCurrentUserComment = actuallyUser=== comment.idUserC
+    
     const commentContainer = document.createElement('div')
     commentContainer.className = 'comment'
+
+
+    const editIcons = `
+        <img src="../img/edit.png" alt="" class="comment_icon edit">
+        <img src="../img/delete.png" alt="" class="comment_icon delete">
+    `
+
+    const cancelEditIcons = `
+        <img src="../img/delete.png" alt="" class="comment_icon cancel">
+    `
 
     commentContainer.innerHTML = `
         <div class="comment_boxComment">
@@ -14,56 +28,71 @@ function commentComponent (comment, actuallyUser, post) {
             <span class="comment_txtComment">${comment.text}</span>
         </div>
 
-
         <div class="comment_editComent--box">
-            <img src="" alt="" class="comment_icon edit">
-            <img src="" alt="" class="comment_icon delete">
+            ${isCurrentUserComment ? editIcons : ''}
         </div>
     `
 
-    const editIcon = commentContainer.querySelector('.edit')
     const deleteIcon = commentContainer.querySelector('.delete')
+    const editIcon = commentContainer.querySelector('.edit')
+    const commentContent = commentContainer.querySelector('.comment_txtComment')
+    const iconsContent = commentContainer.querySelector('.comment_editComent--box')
 
-    if(actuallyUser=== comment.idUserC){
-        editIcon.src = '../img/edit.png'
-        deleteIcon.src = '../img/delete.png'
-    }
-
-    editIcon.addEventListener('click', ()=>{
-        console.log('QUIERE EDITAR EL COMENTARIO ', comment.text)
-        const commentContent = commentContainer.querySelector('.comment_txtComment')
-
+    // iniciar el modo edicion
+    const startEditing = () => {
         commentContent.innerHTML = `
-        <form action="" method="comment" id="formComment">
-            <input required type="text" name="commentText" id="postText" class="editComment_text">
-        </form>
+            <form action="" method="comment" id="formComment">
+                <input required type="text" name="commentText" id="postText" class="editComment_text">
+            </form>
         `
         const input = commentContent.querySelector('#postText')
+        const editForm = commentContent.querySelector('#formComment')
         input.value = comment.text
 
-        const idCommentActually = comment.idComment
+        editForm.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            
+            const newComment = {
+                ...comment,
+                text: input.value
+            }
 
-        // comment.filter((element)=>{
-        //     if(element.idComment === idCommentActually) {
-        //         console.log('comentario encontrado', element)
-        //         return element
-        //     }
-        // })
+            updateComment(post,newComment)
 
-        console.log({
-            comentarios: comment,
-            idComentarioActual: idCommentActually,
-            post: post
         })
+        //cambiar los icoinos para que solo se pueda cancelar
+        iconsContent.innerHTML = cancelEditIcons
 
-    })
+        const cancelIcon = iconsContent.querySelector('.cancel')
 
+        cancelIcon.addEventListener('click',cancelEditing)
 
-    deleteIcon.addEventListener('click', ()=>{
-        console.log('QUIERE eliminar EL COMENTARIO ',)
-        //deleteComment(comment)
-    })
+    }
 
+    const cancelEditing = () => {
+
+        iconsContent.innerHTML = editIcons
+        commentContent.innerHTML = comment.text
+        
+        const editIcon = commentContainer.querySelector('.edit')
+        const deleteIcon = commentContainer.querySelector('.delete')
+
+        editIcon.addEventListener('click', startEditing)
+        deleteIcon.addEventListener('click', deleteComment)
+        
+    }
+
+    const deleteCommentPost = () => {
+            console.log('QUIERE eliminar EL COMENTARIO ',)
+            deleteComment(post,comment)
+    }
+    
+    
+    //permitir acceso de edicion
+    if(isCurrentUserComment){
+        editIcon.addEventListener('click', startEditing)
+        deleteIcon.addEventListener('click', deleteCommentPost)
+    }
 
     return commentContainer
 }

@@ -1,8 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-// import { onNavigate } from "./helpers.js"
-// import * as firebase from "./firebase/authentication.js"
-import {routes}  from "./lib/helpers.js"
+import {routes}  from "./lib/index.js"
 
 window.addEventListener('popstate',(e)=>{
     root.innerHTML = ''

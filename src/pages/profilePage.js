@@ -2,11 +2,13 @@ import { Post } from "../components/postcomponent.js";
 import { sideMenu } from "../components/sideMenu.js";
 import { auth } from "../firebase/config.js";
 import { getMyPosts } from "../firebase/posts.js";
-import { deployUploadPost, onNavigate, toggleMenu } from "../lib/helpers.js";
+import { deployUploadPost, toggleMenu } from "../lib/helpers.js";
+import { onNavigate } from "../lib/index.js";
 
 function createProfilePage  () {
     
     const user = auth.currentUser
+    //console.log('este es el ususario actual',user)
     
     const profilePageContainer = document.createElement('div')
     profilePageContainer.className = 'profilePage'
@@ -23,9 +25,7 @@ function createProfilePage  () {
             <span class="profilePage_textUsername">${user.displayName || 'userName'}</span>
         </div>
 
-        <div class="profilePage_wallPost">
-            aqui van los post de este usuario
-        </div>
+        <div class="profilePage_wallPost">aqui van los post de este usuario</div>
 
         <div class="profilePage_footerMenu">
             <button class="profilePage_footerMenu--icon icon_search" id="search"></button>
@@ -80,13 +80,14 @@ function createProfilePage  () {
 
     getMyPosts(user).then((myPosts)=>{
         postContainer.innerHTML = ''
-        console.log('estos son mis posts', myPosts)
+        // console.log('estos son mis posts', myPosts)
         myPosts.forEach((post)=>{
             const renderPost = Post(post)
-
             postContainer.appendChild(renderPost)
             
         })
+
+        console.log(postContainer.childNodes.length)
     })
 
     return profilePageContainer

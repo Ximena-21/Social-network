@@ -1,4 +1,4 @@
-import { onNavigate } from "../lib/helpers.js"
+import { onNavigate } from "../lib/index.js"
 
 
 function createLandingPage () {

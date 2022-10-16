@@ -1,7 +1,8 @@
 import { Post } from "../components/postcomponent.js";
 import { sideMenu,} from "../components/sideMenu.js";
-import {getMyPosts, subscribeToRealTimePosts} from '../firebase/posts.js'
-import { deployUploadPost, onNavigate, toggleMenu } from "../lib/helpers.js";
+import { subscribeToRealTimePosts} from '../firebase/posts.js'
+import { deployUploadPost, toggleMenu } from "../lib/helpers.js";
+import { onNavigate } from "../lib/index.js";
 
 
 function createWallPage () {
@@ -15,9 +16,7 @@ function createWallPage () {
         <img src="../img/menuHidden.png" alt="logo Knitters" class="wallPage_menuHidden">
     </div>
 
-    <div class="wallPage_wallPost">
-        aqui van los post 
-    </div>
+    <div class="wallPage_wallPost"></div>
 
     <div class="wallPage_footerMenu">
         <button class="wallPage_footerMenu--icon icon_search" id="search"></button>

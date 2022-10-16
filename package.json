@@ -11,7 +11,6 @@
   ],
   "license": "MIT",
   "scripts": {
-   
     "test": "jest --coverage --env=jsdom",
     "start": "serve -s src/",
     "sass": "node-sass --watch src/sass/ -o src/styles/"
@@ -33,6 +32,9 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "sass": "^1.55.0"

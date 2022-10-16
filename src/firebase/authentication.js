@@ -4,15 +4,12 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  sendEmailVerification,
   GoogleAuthProvider,
-  getAuth,
-  signInWithRedirect,
   signInWithPopup,
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
-import { onNavigate } from "../lib/helpers.js";
+import { onNavigate } from "../lib/index.js";
 import { auth } from "./config.js";
 
 
