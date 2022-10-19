@@ -76,18 +76,29 @@
     }
 
     &_singInGoogle {
-        padding-bottom: 5px;
-        gap:5px;
-        @include flex-column-row;
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        //box-shadow: rgb(0, 0, 0, 15%) 0px 1px 0px;
+        margin-bottom: 10px;
     }
 
     &_singInGoogle--logo{
-        width: 15%;
-        max-width: 35px;
+        width: 18px;
     }
 
     &_singInGoogle--text{
-        @include textGreen;
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #757575;
+        font-weight: 600;
+        text-decoration: none;
+        color: #000000 / 0,0,0 0.53;
         cursor: pointer;
     }
 

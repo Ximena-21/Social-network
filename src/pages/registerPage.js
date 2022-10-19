@@ -26,7 +26,7 @@ function createRegisterPage () {
 
         <div class="registerPage_singInGoogle">
             <img src="../img/google.png" alt="logo google" class="registerPage_singInGoogle--logo">
-            <a href="" class="registerPage_singInGoogle--text" id='singInGoogle'>Iniciar sesión con Google</a>
+            <a href="" class="registerPage_singInGoogle--text" id='singInGoogle'>Acceder con Google</a>
         </div>
 
         <div class="registerPage_singIn">
@@ -72,6 +72,12 @@ function createRegisterPage () {
     registerPageContainer.querySelector('#clickSingIn').addEventListener('click', (event) => {
         event.preventDefault()
         onNavigate('/login')
+
+    })
+
+    registerPageContainer.querySelector('.registerPage_home').addEventListener('click', (event) => {
+        event.preventDefault()
+        onNavigate('/')
 
     })
 

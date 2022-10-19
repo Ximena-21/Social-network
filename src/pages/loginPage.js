@@ -18,14 +18,14 @@ function createLoginPage () {
             <input required type="email" name="email" placeholder="Tu Email" id="email">
             <div class="inputPassword"> 
                 <input required type="password" name="password" placeholder="Tu Contraseña" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,13}">
-                <img src="../img/eye.png" alt="eye" class="inputPassword_eye">
+                <img src="../img/eyesClose.png" alt="eye" class="inputPassword_eye">
             </div>
             <button type="submit" class="loginPage_btnSinIn" id="btnSingIn">Iniciar sesión</button>
         </form>
 
         <div class="loginPage_singInGoogle">
             <img src="../img/google.png" alt="logo google" class="loginPage_singInGoogle--logo">
-            <a href="" class="loginPage_singInGoogle--text" id='singInGoogle'>Iniciar sesión con Google</a>
+            <a href="" class="loginPage_singInGoogle--text" id='singInGoogle'>Acceder con Google</a>
         </div>
 
         <div class="loginPage_singUp">
@@ -69,10 +69,27 @@ function createLoginPage () {
 
     })
 
-    loginPageContainer.querySelector('.loginPage_home').addEventListener('click', (event) => {
+    loginPageContainer.querySelector('.loginPage_home').addEventListener('click', () => {
         console.log('llevar a landingPge')
         onNavigate('/')
 
+    })
+
+    //mostrar contraseña
+
+    const showPassword = loginPageContainer.querySelector('.inputPassword_eye')
+    showPassword.addEventListener('click', () => {
+
+        if(showPassword.src === "http://localhost:3000/img/eyesClose.png" && password.type === "password") {
+            
+            showPassword.src = "../img/eye.png"
+            password.type = "text"
+
+        } else {
+            
+            showPassword.src = "../img/eyesClose.png"
+            password.type = "password"
+        }
     })
 
     return loginPageContainer

@@ -72,18 +72,24 @@
     text-align: end;
     border-bottom: 1px solid #1DAD4B; }
   .registerPage_singInGoogle {
-    padding-bottom: 5px;
-    gap: 5px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    margin-bottom: 10px; }
   .registerPage_singInGoogle--logo {
-    width: 15%;
-    max-width: 35px; }
+    width: 18px; }
   .registerPage_singInGoogle--text {
-    font-size: 11px;
-    color: #1DAD4B;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #757575;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000 / 0,0,0 0.53;
     cursor: pointer; }
   .registerPage_singIn {
     display: flex;

@@ -9,7 +9,7 @@ function editPost(post) {
 
     editPostContainer.innerHTML = `
         <form action="" method="post" class="editPost_container">
-            <button class="editPost_btnClosed" id="btnClose">x</button>
+            <button class="editPost_btnClosed" id="btnClose"></button>
            
             <div  class="editPost_previewContainer" id="previewContainer" >
                 <img src="${post.image}" id="preview" class="editPost_preview"/>
