@@ -6,24 +6,6 @@ function createLandingPage () {
     landingPageContainer.className = "landingPage"
 
     landingPageContainer.innerHTML = `
-<<<<<<< HEAD
-    <header class='landingPage_header'>
-        <nav class=" landingPage_header--nav nav">
-            <div class="nav_menuLogo">
-                <img src="../img/K__1_-removebg-preview 2.png" alt="" class="nav_menuLogo--img"/>
-                <button class="nav_menuLogo--abrirMenu abrirMenu " aria-label="Abrir menu">
-                    <img src="../img/Group 6.png" alt="abrir menu">
-                </button>
-            </div>
-            <ul class="nav_menu menu">
-                <button class="menu_cerrarMenu cerrarMenu" aria-label="Cerrar menu">
-                    <img height="33" width="33" src="../img/cerrar_menu.png" alt="cerrar menu">
-                </button>
-                <li class=""><a href="#inicio">Inicio</a></li>
-                <li><a href="#ventajas">Ventajas</a></li>
-                <li><a href="#quienesSomos">Quienes Somos</a></li>
-                <li><a href="#Contacto">Contacto</a></li>
-=======
 
     <header class="landingPage_header header">
 
@@ -43,7 +25,6 @@ function createLandingPage () {
                 <li><a href="#advantageSection" class="header_itemMenu" id="advantage">Ventajas</a></li>
                 <li><a href="#aboutSection" class="header_itemMenu" id="about">Acerca de</a></li>
                 <li><a href="#contactSection" class="header_itemMenu" id="contact">Contacto</a></li>
->>>>>>> 548d4626a68497d9a9873ba6d112dee724d192b7
             </ul>
         </nav>
 
@@ -147,40 +128,6 @@ function createLandingPage () {
 }
 
 
-<<<<<<< HEAD
-
-let menu = document.querySelector('.menu');
-let abrir_menu_b = document.querySelector('.abrirMenu');
-let cerrar_menu_b = document.querySelector('.cerrarMenu');
-
-//funcion que abra y cierre
-function toggleMenu() {
-    menu.classList.toggle("menu_abierto");
-}
-
-//evento a la funcion o ejecutar
-abrir_menu_b.addEventListener("click",toggleMenu);
-cerrar_menu_b.addEventListener("click",toggleMenu);
-
 export {
     createLandingPage
 }
-
-
-// let menu = document.querySelector('.menu');
-// let abrir_menu_b = document.querySelector('.abrirMenu');
-// let cerrar_menu_b = document.querySelector('.cerrarMenu');
-
-// funcion que abra y cierre
-// function toggleMenu() {
-//     menu.classList.toggle("menu_abierto");
-// }
-
-// //evento a la funcion o ejecutar
-// abrir_menu_b.("click",toggleMenu);
-// cerrar_menu_b.addEventListener("click",toggleMenu);
-=======
-export {
-    createLandingPage
-}
->>>>>>> 548d4626a68497d9a9873ba6d112dee724d192b7
