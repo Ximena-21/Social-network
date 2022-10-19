@@ -1,70 +1,175 @@
 .registerPage {
   width: 100%;
+  max-width: 600px;
   height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 20px; }
+  flex-direction: column; }
+  .registerPage_home {
+    width: 8%;
+    max-width: 35px;
+    position: absolute;
+    top: 10px;
+    left: 20px; }
   .registerPage_welcome--box {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    padding-bottom: 20px;
+    gap: 5px; }
   .registerPage_welcome {
     color: #5F15AD; }
   .registerPage_logo {
-    width: 20%; }
+    width: 20%;
+    max-width: 50px; }
   .registerPage_formRegister {
     width: 80%;
+    padding-bottom: 35px;
+    gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 20px; }
+    flex-direction: column; }
   .registerPage_formRegister input {
     width: 90%;
-    height: 40px;
+    max-width: 260px;
     border: #5F15AD solid 1px;
     background: #FFFFFF;
-    padding: 10px 20px;
+    padding: 10px 7px;
     border-radius: 10px;
-    text-align: start; }
-  .registerPage_formRegister input::placeholder {
-    color: #5F15AD;
-    font-size: 11px; }
+    font-size: 14px;
+    outline: none; }
+    .registerPage_formRegister input:focus {
+      background-color: #fbf7f0;
+      border: 1px solid #F7990F;
+      color: #5F15AD; }
+    .registerPage_formRegister input:active {
+      box-shadow: 3px -3px 10px #fbcf8d, -3px 3px 10px #ee9f27; }
+    .registerPage_formRegister input::placeholder {
+      color: #5F15AD;
+      font-size: 11px;
+      font-style: italic;
+      text-align: start; }
   .registerPage_formRegister button {
-    width: 90%;
-    height: 40px;
+    min-height: 20px;
+    max-height: 40px;
+    margin-top: 10px;
     border: #5F15AD solid 1px;
     background: #5F15AD;
     border-radius: 10px;
     padding: 0 40px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 11px;
+    margin-top: 40px; }
   .registerPage_show {
-    font-size: 12px;
+    font-size: 11px;
     color: #1DAD4B;
     font-weight: 700;
     text-align: end;
     border-bottom: 1px solid #1DAD4B; }
   .registerPage_singInGoogle {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    margin-bottom: 10px; }
   .registerPage_singInGoogle--logo {
-    width: 10%; }
+    width: 18px; }
   .registerPage_singInGoogle--text {
-    font-size: 12px;
-    color: #1DAD4B; }
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #757575;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000 / 0,0,0 0.53;
+    cursor: pointer; }
   .registerPage_singIn {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row; }
   .registerPage_singIn--click {
-    font-size: 12px;
-    color: #1DAD4B; }
+    font-size: 11px;
+    color: #1DAD4B;
+    cursor: pointer; }
   .registerPage_singIn--text {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700; }
+
+.inputPassword {
+  width: 100%;
+  max-width: 294px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative; }
+  .inputPassword_eye {
+    width: 20px;
+    position: absolute;
+    right: 20px; }
+
+@media (min-width: 750px) {
+  .registerPage_welcome--box {
+    padding-bottom: 25px; }
+  .registerPage_welcome {
+    font-size: 36px; }
+  .registerPage_msg {
+    font-size: 16px; }
+  .registerPage_logo {
+    max-width: 65px; }
+  .registerPage_formRegister {
+    padding-bottom: 40px; }
+  .registerPage_formRegister input {
+    min-height: 30px;
+    max-width: 280px; }
+  .registerPage_formRegister input::placeholder {
+    font-size: 13px; }
+  .registerPage_formRegister button {
+    min-height: 30px;
+    max-width: 280px;
+    font-size: 14px; }
+  .inputPassword {
+    max-width: 315px; }
+    .inputPassword_eye {
+      right: 25px; } }
+
+@media (min-width: 1024px) {
+  .registerPage_welcome--box {
+    padding-bottom: 30px; }
+  .registerPage_welcome {
+    font-size: 38px; }
+  .registerPage_msg {
+    font-size: 18px; }
+  .registerPage_logo {
+    max-width: 80px; }
+  .registerPage_formRegister {
+    padding-bottom: 45px;
+    gap: 15px; }
+  .registerPage_formRegister input {
+    min-height: 35px;
+    max-width: 300px; }
+  .registerPage_formRegister input::placeholder {
+    font-size: 15px; }
+  .registerPage_formRegister button {
+    min-height: 35px;
+    max-width: 300px;
+    font-size: 18px; }
+  .registerPage_singInGoogle--text {
+    font-size: 12px; }
+  .registerPage_singIn--click {
+    font-size: 12px; }
+  .registerPage_singIn--text {
+    font-size: 12px; }
+  .inputPassword {
+    max-width: 340px; }
+    .inputPassword_eye {
+      right: 30px; } }

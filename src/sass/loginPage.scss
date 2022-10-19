@@ -4,15 +4,24 @@
     width: 100%;
     max-width: 600px;
     height: 100vh;
+    position: relative;
     @include flex-column-center;
-    gap: 20px;
+
+    &_home{
+        width: 8%;
+        max-width: 35px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer;
+    }
 
     &_welcome{
         color: $primary-color;
+        padding-bottom: 20px;
     }
 
     &_msg{
-        // margin: 20px 0px 20px;
         color: $secundary-color;
         font-size: 16px;
     }
@@ -20,44 +29,191 @@
     &_logo{
         width: 40%;
         max-width: 180px;
+        padding: 20px 0;
     }
     
     &_formSingIn {
         width: 80%;
-        // margin-top: 20px;
+        padding-bottom: 35px;
+        gap: 10px;
         @include flex-column-center;
-        gap: 20px;
     }
     
     &_formSingIn input {
-        @include input
-    }
-    
-    &_formSingIn input::placeholder{
-        color: $primary-color;
-        font-size: 11px;
+        @include input;
+        outline: none;
+            /* max-height: 50px;*/
+        &:focus {
+            background-color: #fbf7f0;
+            border: 1px solid $secundary-color;
+            color:$primary-color;
+        }
+
+        &:active {
+            box-shadow:  3px -3px 10px #fbcf8d,
+			//3px -3px 30px #F7990F,
+			//3px -3px 30px #F7990F, 
+			-3px 3px 10px #ee9f27;
+        }
+
+        &::placeholder{
+            color: $primary-color;
+            font-size: 11px;
+            font-style: italic;
+            text-align: start;
+        }
     }
     
     &_formSingIn button {
-        @include button
+        @include button;
+        font-size: 11px;
     }
+
     &_singInGoogle {
-        @include flex-column-row;
-        // gap: 10px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        box-shadow: 1 2 3 grey;
+       // box-shadow: rgb(0 0 0 / 15%) 0px 1px 0px;
+       margin-bottom: 10px;
     }
 
     &_singInGoogle--logo{
-        width: 10%;
+        width: 18px;
     }
 
     &_singInGoogle--text{
-        @include textGreen;
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #757575;
+        font-weight: 600;
+        text-decoration: none;
+        color: #000000 / 0,0,0 0.53;
+        cursor: pointer;
     }
     &_singUp--register{
         @include textGreen;
+        cursor: pointer;
     }
     &_singUp--text{
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
+    }
+}
+
+.inputPassword{
+    width: 100%;
+    max-width: 294px;
+    @include flex-column-row;
+    position: relative;
+
+    &_eye{
+        width: 20px;
+        position: absolute;
+        right: 20px;
+    }
+}
+
+@media (min-width: 750px) {
+    .loginPage{
+        &_welcome{
+            font-size: 36px;
+            padding-bottom: 25px;
+        }
+
+        &_msg{
+            font-size: 16px;
+        }
+
+        &_logo{
+            max-width: 190px;
+            padding: 25px 0;
+        }
+
+        &_formSingIn {
+            padding-bottom: 40px;
+        }
+
+        &_formSingIn input {
+            min-height: 30px;
+            max-width: 280px;
+        }
+
+        &_formSingIn input::placeholder{
+            font-size: 13px;
+        }
+
+        &_formSingIn button {
+            min-height: 30px;
+            max-width: 280px;
+            font-size: 14px;
+        }
+    }
+
+    .inputPassword{
+        max-width: 315px;
+        &_eye{
+            right: 25px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .loginPage{
+        &_welcome{
+            font-size: 38px;
+            padding-bottom: 30px;
+        }
+
+        &_msg{
+            font-size: 18px;
+        }
+
+        &_logo{
+            max-width: 200px;
+            padding: 30px 0;
+        }
+
+        &_formSingIn {
+            padding-bottom: 45px;
+            gap: 15px;
+        }
+
+        &_formSingIn input {
+            min-height: 35px;
+            max-width: 300px;
+        }
+
+        &_formSingIn input::placeholder{
+            font-size: 15px;
+        }
+
+        &_formSingIn button {
+            min-height: 35px;
+            max-width: 300px;
+            font-size: 18px;
+        }
+
+        &_singInGoogle--text{
+            font-size: 12px;
+        }
+        &_singUp--register{
+            font-size: 12px;
+        }
+        &_singUp--text{
+            font-size: 12px;
+        }
+    }
+
+    .inputPassword{
+        max-width: 340px;
+        &_eye{
+            right: 30px;
+        }
     }
 }

@@ -1,0 +1,89 @@
+.wallPage {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative; }
+  .wallPage_headerBox {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: #ECE7F1;
+    position: fixed;
+    top: 0; }
+  .wallPage_logo {
+    width: 50px; }
+  .wallPage_menuHidden {
+    width: 30px; }
+  .wallPage_wallPost {
+    width: 100%;
+    max-width: 700px;
+    margin: 60px 0;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .wallPage_footerMenu {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #3B007A;
+    position: fixed;
+    bottom: 0; }
+  .wallPage_footerMenu--icon {
+    width: 20px;
+    max-width: 40px;
+    min-height: 20px;
+    max-height: 40px;
+    border-style: none;
+    cursor: pointer; }
+
+.icon_search {
+  background: url(../img/search.png) no-repeat center/cover; }
+
+.icon_home {
+  background: url(../img/homeFooter.png) no-repeat center/cover; }
+
+.icon_uploadPost {
+  background: url(../img/share.png) no-repeat center/cover; }
+
+.icon_profile {
+  background: url(../img/user.png) no-repeat center/cover; }
+
+.footerMenu_Hidden {
+  width: 0; }
+
+@media (min-width: 1024px) {
+  .wallPage_headerBox {
+    flex-direction: row; }
+  .wallPage_footerMenu {
+    top: 0;
+    width: 25%;
+    right: 0;
+    bottom: auto;
+    background: none; }
+  .wallPage_menuHidden {
+    width: 0; }
+  .sideMenu {
+    left: auto; }
+  .icon_search {
+    background: url(../img/searchPurple.png) no-repeat center/cover; }
+  .icon_home {
+    background: url(../img/homePurple.png) no-repeat center/cover; }
+  .icon_uploadPost {
+    background: url(../img/sharePurple.png) no-repeat center/cover; }
+  .icon_profile {
+    background: url(../img/profilePurple.png) no-repeat center/cover; } }

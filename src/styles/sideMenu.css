@@ -1,0 +1,74 @@
+.sideMenu {
+  width: 70%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
+  padding: 50px 0;
+  max-width: 400px;
+  gap: 40px;
+  background: #ece7f1;
+  color: #5F15AD;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width 0.5s , opacity 0.3s;
+  opacity: 1; }
+  .sideMenu_hidden {
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s , opacity 0.2s 0.1S; }
+  .sideMenu_exitMenu {
+    width: 20px;
+    max-width: 40px;
+    min-height: 20px;
+    max-height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; }
+  .sideMenu_usernameBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 50px; }
+  .sideMenu_menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; }
+  .sideMenu_optionBox {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5px; }
+    .sideMenu_optionBox--img {
+      width: 30px;
+      max-width: 50px;
+      min-height: 30px;
+      max-height: 50px; }
+
+.sideMenu_imgUsername {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; }
+
+@media (min-width: 1024px) {
+  .sideMenu {
+    left: auto;
+    right: 0;
+    top: 50px; }
+    .sideMenu_exitMenu {
+      right: auto;
+      left: 20px; } }

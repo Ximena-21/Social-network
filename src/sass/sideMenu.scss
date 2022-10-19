@@ -1,0 +1,88 @@
+@import './generics.scss';
+
+.sideMenu{
+    width: 70%;
+    min-height: 100vh;
+    @include flex-column-center;
+    justify-content: start;
+    padding: 50px 0;
+    max-width: 400px;
+    gap: 40px;
+    background: #ece7f1;
+    color: $primary-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    // overflow: hidden;
+    // transition: width 0.5s , opacity 0.5s;
+    transition: width 0.5s , opacity 0.3s;
+    opacity: 1;
+    
+    &_hidden{
+        width: 0;
+        opacity: 0;
+        transition: width 0.5s , opacity 0.2s 0.1S;
+    }
+
+    &_exitMenu{
+        width: 20px;
+        max-width: 40px;
+        min-height: 20px;
+        max-height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    &_usernameBox{
+        width: 100%;
+        @include flex-column-center;
+        gap: 10px;
+        padding-top: 50px;
+    }
+
+    &_menu{
+        width: 100%;
+        @include flex-column-center;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    &_optionBox{
+        width: 90%;
+        @include flex-column-row;
+        justify-content: flex-start;
+        gap: 5px;
+
+        &--img{
+            width: 30px;
+            max-width: 50px;
+            min-height: 30px;
+            max-height: 50px;
+        }
+    }
+}
+
+
+//
+.sideMenu{
+    &_imgUsername{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sideMenu{
+        left: auto;
+        right: 0;
+        top: 50px;
+
+        &_exitMenu{
+            right: auto;
+            left: 20px;
+        }
+    }
+}

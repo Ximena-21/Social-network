@@ -1,0 +1,132 @@
+@import './generics.scss';
+
+.wallPage{
+    width: 100%;
+    max-width: 750px;
+    @include flex-column-center;
+    position: relative;
+
+    &_headerBox {
+        width: 100%;
+        //max-width: 700px;
+        min-height: 50px;
+        padding: 0 10px;
+        @include flex-column-row;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        background: #ECE7F1;
+        position: fixed;
+        top: 0;
+    }
+
+    &_logo{
+        width: 50px;
+    }
+
+    &_menuHidden{
+        width: 30px;
+    }
+
+    &_wallPost{
+        width: 100%;
+        max-width: 700px;
+        margin: 60px 0;
+        gap: 20px;
+        @include flex-column-center;
+    }
+    &_footerMenu{
+        width: 100%;
+        //max-width: 750px;
+        min-height: 50px;
+        @include flex-column-row;
+        justify-content: space-around;
+        background: #3B007A;
+        position: fixed;
+        bottom: 0;
+    }
+
+    &_footerMenu--icon{
+        width: 20px;
+        max-width: 40px;
+        min-height: 20px;
+        max-height: 40px;
+        //background: url(../img/search.png) no-repeat center/ cover;
+        border-style: none;
+        cursor: pointer;
+    }
+
+}
+
+
+
+.icon{
+    &_search{
+        background: url(../img/search.png) no-repeat center/ cover;
+    }
+    &_home{
+        background: url(../img/homeFooter.png) no-repeat center/ cover;
+    }
+    &_uploadPost{
+        background: url(../img/share.png) no-repeat center/ cover;
+    }
+    &_profile{
+        background: url(../img/user.png) no-repeat center/ cover;
+    }
+}
+
+.footerMenu_Hidden{
+    width: 0;
+}
+
+// #search{
+//     background: url(../img/search.png) no-repeat center;
+// }
+// #home{
+//     background: url(../img/homeFooter.png) no-repeat center;
+// }
+// #uploadPost{
+//     background: url(../img/share.png) no-repeat center;
+// }
+// #profile{
+//     background: url(../img/user.png) no-repeat center;
+// }
+
+@media (min-width: 1024px) {
+    .wallPage{
+        &_headerBox{
+            flex-direction: row;
+        }
+
+        
+        &_footerMenu{
+            top: 0;
+            width: 25%;
+            right: 0;
+            bottom: auto;
+            background: none;
+        }
+        &_menuHidden{
+            width: 0;
+        }
+    }
+
+    .sideMenu {
+        left: auto;
+    }
+
+    .icon{
+        &_search{
+            background: url(../img/searchPurple.png) no-repeat center/ cover;
+        }
+        &_home{
+            background: url(../img/homePurple.png) no-repeat center/ cover;
+        }
+        &_uploadPost{
+            background: url(../img/sharePurple.png) no-repeat center/ cover;
+        }
+        &_profile{
+            background: url(../img/profilePurple.png) no-repeat center/ cover;
+        }
+    }
+    
+}

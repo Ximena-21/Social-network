@@ -2,10 +2,19 @@
 @import url("./loginPage.css");
 @import url("./registerPage.css");
 @import url("./landingPage.css");
+@import url("./wallPage.css");
+@import url("./sideMenu.css");
+@import url("./uploadPost.css");
+@import url("./editPost.css");
+@import url("./comment.css");
+@import url("./post.css");
+@import url("./editComment.css");
+@import url("./profile.css");
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
 
 body {
   width: 100%;

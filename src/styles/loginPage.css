@@ -2,58 +2,163 @@
   width: 100%;
   max-width: 600px;
   height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 20px; }
+  flex-direction: column; }
+  .loginPage_home {
+    width: 8%;
+    max-width: 35px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer; }
   .loginPage_welcome {
-    color: #5F15AD; }
+    color: #5F15AD;
+    padding-bottom: 20px; }
   .loginPage_msg {
     color: #F7990F;
     font-size: 16px; }
   .loginPage_logo {
     width: 40%;
-    max-width: 180px; }
+    max-width: 180px;
+    padding: 20px 0; }
   .loginPage_formSingIn {
     width: 80%;
+    padding-bottom: 35px;
+    gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 20px; }
+    flex-direction: column; }
   .loginPage_formSingIn input {
     width: 90%;
-    height: 40px;
+    max-width: 260px;
     border: #5F15AD solid 1px;
     background: #FFFFFF;
-    padding: 10px 20px;
+    padding: 10px 7px;
     border-radius: 10px;
-    text-align: start; }
-  .loginPage_formSingIn input::placeholder {
-    color: #5F15AD;
-    font-size: 11px; }
+    font-size: 14px;
+    outline: none;
+    /* max-height: 50px;*/ }
+    .loginPage_formSingIn input:focus {
+      background-color: #fbf7f0;
+      border: 1px solid #F7990F;
+      color: #5F15AD; }
+    .loginPage_formSingIn input:active {
+      box-shadow: 3px -3px 10px #fbcf8d, -3px 3px 10px #ee9f27; }
+    .loginPage_formSingIn input::placeholder {
+      color: #5F15AD;
+      font-size: 11px;
+      font-style: italic;
+      text-align: start; }
   .loginPage_formSingIn button {
-    width: 90%;
-    height: 40px;
+    min-height: 20px;
+    max-height: 40px;
+    margin-top: 10px;
     border: #5F15AD solid 1px;
     background: #5F15AD;
     border-radius: 10px;
     padding: 0 40px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 11px; }
   .loginPage_singInGoogle {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    box-shadow: 1 2 3 grey;
+    margin-bottom: 10px; }
   .loginPage_singInGoogle--logo {
-    width: 10%; }
+    width: 18px; }
   .loginPage_singInGoogle--text {
-    font-size: 12px;
-    color: #1DAD4B; }
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #757575;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000 / 0,0,0 0.53;
+    cursor: pointer; }
   .loginPage_singUp--register {
-    font-size: 12px;
-    color: #1DAD4B; }
+    font-size: 11px;
+    color: #1DAD4B;
+    cursor: pointer; }
   .loginPage_singUp--text {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700; }
+
+.inputPassword {
+  width: 100%;
+  max-width: 294px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative; }
+  .inputPassword_eye {
+    width: 20px;
+    position: absolute;
+    right: 20px; }
+
+@media (min-width: 750px) {
+  .loginPage_welcome {
+    font-size: 36px;
+    padding-bottom: 25px; }
+  .loginPage_msg {
+    font-size: 16px; }
+  .loginPage_logo {
+    max-width: 190px;
+    padding: 25px 0; }
+  .loginPage_formSingIn {
+    padding-bottom: 40px; }
+  .loginPage_formSingIn input {
+    min-height: 30px;
+    max-width: 280px; }
+  .loginPage_formSingIn input::placeholder {
+    font-size: 13px; }
+  .loginPage_formSingIn button {
+    min-height: 30px;
+    max-width: 280px;
+    font-size: 14px; }
+  .inputPassword {
+    max-width: 315px; }
+    .inputPassword_eye {
+      right: 25px; } }
+
+@media (min-width: 1024px) {
+  .loginPage_welcome {
+    font-size: 38px;
+    padding-bottom: 30px; }
+  .loginPage_msg {
+    font-size: 18px; }
+  .loginPage_logo {
+    max-width: 200px;
+    padding: 30px 0; }
+  .loginPage_formSingIn {
+    padding-bottom: 45px;
+    gap: 15px; }
+  .loginPage_formSingIn input {
+    min-height: 35px;
+    max-width: 300px; }
+  .loginPage_formSingIn input::placeholder {
+    font-size: 15px; }
+  .loginPage_formSingIn button {
+    min-height: 35px;
+    max-width: 300px;
+    font-size: 18px; }
+  .loginPage_singInGoogle--text {
+    font-size: 12px; }
+  .loginPage_singUp--register {
+    font-size: 12px; }
+  .loginPage_singUp--text {
+    font-size: 12px; }
+  .inputPassword {
+    max-width: 340px; }
+    .inputPassword_eye {
+      right: 30px; } }

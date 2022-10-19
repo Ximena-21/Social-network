@@ -22,27 +22,41 @@ $tertiary-color: #1DAD4B;
     flex-direction: row;
 }
 
+@mixin flex-row-spaceBetween {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
 @mixin input {
     width: 90%;
-    height: 40px;
+    max-width: 260px;
+    // min-height: 20px;
+    // max-height: 40px;
     border: $primary-color solid 1px;
     background: #FFFFFF;
-    padding: 10px 20px;
+    padding: 10px 7px;
     border-radius: 10px;
-    text-align: start;
+    font-size: 14px;
 }
+
 @mixin button {
-    width: 90%;
-    height: 40px;
+    // width: 90%;
+    // max-width: 260px;
+    min-height: 20px;
+    max-height: 40px;
+    margin-top: 10px;
     border: $primary-color solid 1px;
     background: $primary-color;
     border-radius: 10px;
-    // text-align: center;
     padding: 0 40px;
     color: #FFFFFF;
+    cursor: pointer;
 }
 @mixin textGreen {
-    font-size: 12px;
+    font-size: 11px;
     color: $tertiary-color;
 }
 

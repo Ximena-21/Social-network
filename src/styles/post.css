@@ -1,0 +1,96 @@
+.postContainer {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: #d9d9d9 0px 3px 12px; }
+  .postContainer_headerPost {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 5px 10px; }
+  .postContainer_editBox {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px; }
+  .postContainer_editIcon {
+    width: 20px; }
+  .postContainer_userBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px; }
+  .postContainer_user {
+    min-width: 20px;
+    max-width: 50px;
+    height: 20px;
+    max-height: 50px;
+    border-radius: 50%; }
+  .postContainer_userName {
+    font-size: 14px;
+    color: #5F15AD;
+    font-weight: 600;
+    font-style: italic; }
+  .postContainer_description {
+    width: 90%;
+    text-align: start; }
+  .postContainer_icon {
+    width: 20px;
+    height: 20px; }
+  .postContainer_postImage {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f769; }
+  .postContainer_postImage--img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; }
+  .postContainer_interactionBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px 0 5px; }
+  .postContainer_interactionBox--comment {
+    width: 70%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #cecece 0px 1px 4px; }
+  .postContainer_textComment {
+    border: none;
+    background: none; }
+  .postContainer_iconComment {
+    width: 20px;
+    max-width: 30px;
+    min-height: 20px;
+    max-height: 30px; }
+  .postContainer_comments {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5px; }

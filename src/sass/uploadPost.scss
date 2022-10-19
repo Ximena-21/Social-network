@@ -1,0 +1,128 @@
+@import './generics.scss';
+
+.uploadPost {
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding: 20px 50px;
+    @include perfect-center;
+    // gap: 30px;
+    //border-radius: 5px;
+    //color: #fdfdfd;
+    // font-family: sans-serif;
+    // font-size: 16px;
+    // font-weight: 500;
+    background-color: #d6d6d6ba;
+    
+    &_container{
+        width: 80%;
+        min-width: 300px;
+        max-width: 500px;
+        min-height: 400px;
+        padding: 20px 40px;
+        @include flex-column-center;
+        gap: 30px;
+        border-radius: 10px;
+        background-color: #9638fa;
+        position: relative;
+    }
+
+    &_btnClose{
+        width: 30px;
+        max-width: 40px;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    &_img{
+        width: 100%;
+        display: none;
+        // border: 1px solid grey;
+        // border-radius: 10px;
+        // padding: 20px;
+        // background: rgb(247, 247, 247);
+    }
+
+    &_previewContainer{
+        width: 80%;
+        max-width: 250px;
+        min-height: 150px;
+        max-height: 250px;
+        border: 2px solid #757575;
+        border-radius: 10px;
+        background: #dedede;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    &_previewContainer--label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &_preview{
+        width: 50%;
+    }
+
+    &_text{
+        min-height: 40px;
+        max-height: 60px;
+        padding: 5px 10px;
+        border: none;
+        /* border: 1px solid grey; */
+        background: #cba6f2;
+        border-radius: 5px;
+        box-shadow: inset #311351 0px 1px 4px;
+
+        &:focus {
+            outline: none;
+            background: #e5d3f9;
+           // border: 1px solid #cba6f2;
+        }
+    }
+
+    &_btn{
+        padding: 5px 15px;
+        border-radius: 8px;
+        border: none;
+        background: #1DAD4B;
+        /* border: 1px solid #2c7543; */
+        box-shadow: #153a21 2px 2px 3px -1px, #0a8a33 0px 1px 3px -1px;
+        color: #1EFA63;
+        cursor: pointer;
+
+        &:hover {
+            background: #1a9942;
+            color: #9ef0b7;
+        }
+
+        &:active {
+            background: orange;
+            color: #9e7108;
+        }
+    }
+
+    &_btnClosed{
+        width: 30px;
+        max-width: 40px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: url('../img/close.png') no-repeat center/cover;
+        height: 20px;
+        border: none;
+        cursor: pointer;
+    }
+}
