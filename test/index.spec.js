@@ -6,23 +6,6 @@ jest.mock("../src/firebase/authentication.js")
 jest.mock("../src/firebase/config.js")
 jest.mock("../src/firebase/posts.js")
 
-// // const mockTemplateLogin = () => {
-// //     const loginContainer = document.createElement('div');
-// //     loginContainer.innerHTML = '<h1>Mock Template Login 1</h1>'
-// //     return loginContainer
-// // }
-
-// // const mockTemplateRegister = () => {
-// //     const registerContainer = document.createElement('div');
-// //     registerContainer.innerHTML = '<h1>Mock Template register 1 </h1>'
-// //     return registerContainer
-// // }
-
-// // const mockRoutes = {
-// //     '/login': mockTemplateLogin(),
-// //     '/register': mockTemplateRegister(),
-// // }
-
 describe('onNavigate', ()=>{
     it('should render Init Page', ()=>{
         document.body.innerHTML = `<main id="root"></main>`;

@@ -21,18 +21,6 @@
     align-items: center;
     margin-left: 20px;
     color: #5F15AD; }
-  .landingPage_header--logo {
-    width: 20%;
-    height: 50px;
-    max-width: 80px; }
-  .landingPage_header--sing {
-    width: 25%;
-    font-size: 12px;
-    font-weight: 300;
-    background-color: #fff;
-    color: #5F15AD;
-    border: none;
-    font-family: sans-serif; }
   .landingPage_main {
     width: 90%;
     max-width: 600px;
@@ -51,56 +39,7 @@
     flex-direction: column;
     background: #fff; }
 
-<<<<<<< HEAD
-.welcomeBox_container {
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px; }
-
-.welcomeBox_tittle {
-  width: 40%;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #5F15AD;
-  text-align: center;
-  font-size: 28px; }
-
-.welcomeBox_text {
-  text-align: center;
-  color: #F7990F;
-  width: 40%;
-  max-width: 280px;
-  justify-content: center;
-  align-items: center; }
-
-.welcomeBox_button {
-  width: 30%;
-  height: 30px;
-  border-radius: 5px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background-color: #1DAD4B; }
-
-.welcomeBox_img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  max-width: 600px; }
-
-.advantage_container {
-=======
 .header_top {
->>>>>>> 548d4626a68497d9a9873ba6d112dee724d192b7
   width: 100%;
   display: flex;
   flex-direction: row;

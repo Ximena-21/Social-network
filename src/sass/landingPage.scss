@@ -25,25 +25,6 @@
     
     }
 
-<<<<<<< HEAD
-    &_header--logo{
-        width: 20%;
-        height: 50px;
-        max-width: 80px;
-    }
-
-    &_header--sing{
-        width: 25%;
-        font-size: 12px;
-        font-weight: 300;
-        background-color: #fff;
-        color: #5F15AD;
-        border: none;
-        font-family: sans-serif;
-    }
-=======
-
->>>>>>> 548d4626a68497d9a9873ba6d112dee724d192b7
 
     &_main{
         width: 90%;
@@ -62,12 +43,6 @@
     }
 }   
 
-<<<<<<< HEAD
-.welcomeBox{
-    &_container{
-        width: 100%;
-        max-width: 750px;
-=======
 .header{
     &_top{
         width: 100%;
@@ -123,7 +98,6 @@
     &_listMenu{
         padding: 20px 0 0;
         list-style: none;
->>>>>>> 548d4626a68497d9a9873ba6d112dee724d192b7
         @include flex-column-center;
         gap: 20px;
     }
