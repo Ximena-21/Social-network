@@ -17,8 +17,6 @@ Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
 sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
 vivir sin ellas.
 
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
-
 Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
 en una ronda de financiamiento con inversionistas, se presentó una red social
 para químicos en la que los usuarios podían publicar artículos sobre sus
@@ -30,9 +28,7 @@ más comentado.
 
 En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
 Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+salud, energías renovables, o de lo que sea.
 
 Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
 acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
@@ -40,7 +36,7 @@ acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
 El objetivo principal de aprendizaje de este proyecto es construir una
 [Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
 [_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos**.
+en la que podamos.
 
 ## 3. Objetivos de aprendizaje
 
@@ -94,6 +90,18 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ## 4. Diseño de la Interfaz de Usuario
 
+#### Prototipo de baja fidelidad
+
+<img src="src\img\PrototipoBaja.png" >
+
+#### Prototipo de alta fidelidad
+
+<img src="src\img\pototipoAlta1.png">
+
+<img src="src\img\prototipoAlta2.png">
+
+<img src="src\img\prototipoAlta3.png">
+
 ## 5. Pre-requisitos
 _Necesario `npm`_
 
@@ -102,7 +110,8 @@ npm install -g sass
 ```
 ## 6. Demo 
 
-
+* deploy del proyecto Netlify [DEPLOY](https://knitters.netlify.app/)
+* Figma del proyecto [REPO](https://www.figma.com/file/xGjrfUA3Zw87fsGoqOE5zd/SocialNetwork)
 
 ## 7. Autores 
 
