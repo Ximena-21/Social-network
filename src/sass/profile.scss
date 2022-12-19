@@ -9,7 +9,6 @@
 
     &_headerBox {
         width: 100%;
-        //max-width: 700px;
         min-height: 50px;
         padding: 0 10px;
         @include flex-column-row;
@@ -59,7 +58,6 @@
 
     &_footerMenu{
         width: 100%;
-        //max-width: 750px;
         min-height: 50px;
         @include flex-column-row;
         justify-content: space-around;
@@ -73,7 +71,6 @@
         max-width: 40px;
         min-height: 20px;
         max-height: 40px;
-        //background: url(../img/search.png) no-repeat center/ cover;
         border-style: none;
         cursor: pointer;
     }

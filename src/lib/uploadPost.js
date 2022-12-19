@@ -2,6 +2,7 @@
 const changeUploadImg = (event) => {
     
     const uploadedFile = event.target.files[0] //imagen que se cargo al input
+    console.log('uploadedFile', uploadedFile)
     const readerFile = new FileReader(); //se crea objeto para que lea ficheros de app
 
     return new Promise((resolve, reject) => {
@@ -13,6 +14,8 @@ const changeUploadImg = (event) => {
             //etiqueta img a la que ser le pasara en su atributo src la ruta que se leyo del archivo 
             const image = document.querySelector('#preview');
             image.src = readerFile.result;
+
+            console.log('readerFile.result', readerFile.result)
             
             resolve(uploadedFile)
         };
@@ -40,6 +43,7 @@ async function uploadImgWeb (img) {
     const response = await fetch(url,petition) 
     const dataResponse = await response.json()
 
+    console.log('URL IMAGEN >>>>', dataResponse.data.url )
     return dataResponse.data.url
 
 }

@@ -37,17 +37,12 @@ function createRegisterPage () {
     const name = registerPageContainer.querySelector('#name')
     const email = registerPageContainer.querySelector('#email')
     const password = registerPageContainer.querySelector('#password')
- 
-    // const btnRegister = registerPageContainer.querySelector('#btn')
-
     const formRegister = registerPageContainer.querySelector('#form')
 
 
     formRegister.addEventListener('submit',(e)=>{
 
         e.preventDefault()
-
-        console.log('emitiendo la data')
 
         registerUser(name.value, email.value,password.value).then(()=>{
             console.log('MOVERME ACA')
@@ -56,29 +51,21 @@ function createRegisterPage () {
 
     })
     
-    // btnRegister.addEventListener('click', (e) => {
-    //     e.preventDefault()
 
-        
-    // })
-
+    //inciar sesion con google
     registerPageContainer.querySelector('#singInGoogle').addEventListener('click', (event) => {
         event.preventDefault()
-        console.log('iniciar sesion con google')
         singInGoogle()
-
     })
 
     registerPageContainer.querySelector('#clickSingIn').addEventListener('click', (event) => {
         event.preventDefault()
         onNavigate('/login')
-
     })
 
     registerPageContainer.querySelector('.registerPage_home').addEventListener('click', (event) => {
         event.preventDefault()
         onNavigate('/')
-
     })
 
     return registerPageContainer

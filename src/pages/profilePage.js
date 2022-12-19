@@ -8,7 +8,6 @@ import { onNavigate } from "../lib/index.js";
 function createProfilePage  () {
     
     const user = auth.currentUser
-    //console.log('este es el ususario actual',user)
     
     const profilePageContainer = document.createElement('div')
     profilePageContainer.className = 'profilePage'
@@ -76,18 +75,16 @@ function createProfilePage  () {
    
     const postContainer = profilePageContainer.querySelector('.profilePage_wallPost')
 
-    // postContainer.appendChild(postProfile())
 
     getMyPosts(user).then((myPosts)=>{
+        
         postContainer.innerHTML = ''
-        // console.log('estos son mis posts', myPosts)
+        
         myPosts.forEach((post)=>{
             const renderPost = Post(post)
             postContainer.appendChild(renderPost)
             
         })
-
-        console.log(postContainer.childNodes.length)
     })
 
     return profilePageContainer

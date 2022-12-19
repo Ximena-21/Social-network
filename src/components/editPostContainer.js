@@ -1,9 +1,7 @@
 import { accessPostEdit, updatePost } from "../firebase/posts.js"
 
 function editPost(post) {
-    // console.log({
-    //     POST: post,
-    // })
+
     const editPostContainer = document.createElement('div')
     editPostContainer.className = 'editPost'
 
@@ -24,36 +22,22 @@ function editPost(post) {
 
 
     const formEditPost =  editPostContainer.querySelector('.editPost_container')
-   // let urlImg = ""
-    // editPostContainer.querySelector('#postImg').addEventListener('change', async (e) => {
-        
-    //     const image = await changeUploadImg(e)
-
-    //     const urlImgWeb = await uploadImgWeb(image)
-        
-    //     urlImg = urlImgWeb
-
-    // })  
-
     
     formEditPost.addEventListener('submit', (e)=>{
         e.preventDefault()
-       // console.log( inputDescription.value)
+
         accessPostEdit(post.id).then(()=>{
+
             updatePost(post.id, {description: inputDescription.value })
         }).then(()=>{
+            
             editPostContainer.remove()
         })
-
-        // const description = document.querySelector('#postText').value
-        // setPostFireBase(urlImg, description)
     })
 
     return editPostContainer
 }
 
-// <input type="file" name="postImg" id="postImg" class="editPost_img"> 
-//linea 14
 
 export{
     editPost

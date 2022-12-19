@@ -26,7 +26,6 @@ function createWallPage () {
     </div>
     `
     const btnMenu = wallPageContainer.querySelector('.wallPage_menuHidden')
-    //const btnMobile = wallPageContainer.querySelector('.wallPage_footerMenu--icon')
 
     wallPageContainer.querySelector('.wallPage_logo').addEventListener('click', (e)=>{
         e.preventDefault()
@@ -59,23 +58,14 @@ function createWallPage () {
     })
 
     //inyectando la ventana para subir post 
-    wallPageContainer.querySelector('#uploadPost').addEventListener('click', (e)=>{
-        //e.preventDefault()
+    wallPageContainer.querySelector('#uploadPost').addEventListener('click', ()=>{
         const main = document.querySelector('#root')
         deployUploadPost(main)
     })
 
    
     const postContainer = wallPageContainer.querySelector('.wallPage_wallPost')
-    //.appendChild(post())
-    // const post = renderPost(postContainer)
 
-
-    // console.log({
-    //     'renderPost': post,
-    //     'cntenedor': postContainer
-    // })
-    //postContainer.appendChild(post)
 
     //ejecuto la funcion que se subscribe y me ejecutara este callback cada que algo cambie.
     subscribeToRealTimePosts((posts)=>{
@@ -84,11 +74,6 @@ function createWallPage () {
 
         posts.forEach(post => {
             const postUser = Post(post) //retirnar cada post pintado
-
-            if(post.time){
-
-                //console.log(post.time.toDate())
-            }
 
             postContainer.appendChild(postUser) // todos los post se pintan
         });

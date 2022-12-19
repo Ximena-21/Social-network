@@ -15,8 +15,8 @@ function uploadPost() {
                 <label for="postImg" class="uploadPost_previewContainer--label">
                     Seleccionar Imagen
                     <input required type="file" name="postImg" id="postImg" class="uploadPost_img">
+                    <img for="postImg" src="../img/more.png" id="preview" class="uploadPost_preview"/>
                 </label>
-                <img src="../img/more.png" id="preview" class="uploadPost_preview"/>
             </div>
             <input required type="text" name="postText" id="postText" class="uploadPost_text">
             <button class="uploadPost_btn" id="btnPost">Subir Post</button>      
@@ -27,6 +27,7 @@ function uploadPost() {
     uploadPostContainer.querySelector('#postImg').addEventListener('change', async (e) => {
         
         const image = await changeUploadImg(e)
+        console.log('image', image)
 
         const urlImgWeb = await uploadImgWeb(image)
         

@@ -1,5 +1,5 @@
 
-import { allDataMockup, myPosts } from '../src/firebase/__mocks__/data.js'
+import { allDataMockup} from '../src/firebase/__mocks__/data.js'
 import { onNavigate } from '../src/lib/index.js'
 
 jest.mock("../src/firebase/authentication.js")

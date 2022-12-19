@@ -33,8 +33,6 @@ $tertiary-color: #1DAD4B;
 @mixin input {
     width: 90%;
     max-width: 260px;
-    // min-height: 20px;
-    // max-height: 40px;
     border: $primary-color solid 1px;
     background: #FFFFFF;
     padding: 10px 7px;
@@ -43,8 +41,6 @@ $tertiary-color: #1DAD4B;
 }
 
 @mixin button {
-    // width: 90%;
-    // max-width: 260px;
     min-height: 20px;
     max-height: 40px;
     margin-top: 10px;

@@ -12,54 +12,12 @@ import {
 import { onNavigate } from "../lib/index.js";
 import { auth } from "./config.js";
 
-
-// const email = document.querySelector('#email').value
-// const password = document.querySelector('#password').value
-/*  //.................CREAR USUARIOS.......................
-    //Crear usuario y contrtaseña --> registrarse   createUserWithEmailAndPassword(auth, email, password)
-        // .then((registeredUser) => {
-        //     console.log(registeredUser)
-        //     const user = registeredUser.user
-        //     console.log(user)
-        // })
-        // .catch((error) => {
-        //   const errorCode = error.code;
-        //   const errorMessage = error.message;
-        // });
-
-//........ENVIAR MENSAJE DE VERIFICACION AL USUARIO..............
-  //const auth = getAuth();
-  // sendEmailVerification(auth.currentUser)
-  //   .then(() => {
-  //     // Email verification sent!
-  //     // ...
-  //   }); */
-
-
-//.................INICIAR SESION USUARIOS EXISTENTES.............
-//Acceso de usuarios existntes --> inicio de sesion
-
-/*     signInWithEmailAndPassword(auth, email, password)
-    .then((loggedUser) => {
-      // Signed in
-      console.log(loggedUser)
-      const user = loggedUser.user;
-      console.log(user)
-      return user
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    }); */
-
-//.............OBTENER USUSRIOS CON SESION ACTIVA.............
-//configurar observador de autenticacion y obtecion de datos del usuario --> para obtener el ususario actual
-
-
+//el usuario que esta en ese momento
 onAuthStateChanged(auth, (user) =>{
 
     onNavigate(window.location.pathname)
 
+    //limitar si ya inicio sesion se vaya al muro 
     if (user) {
 
         const actuallyPath = window.location.pathname
@@ -75,7 +33,7 @@ onAuthStateChanged(auth, (user) =>{
 
       if(actuallyPath === '/wall' || actuallyPath === 'profile'){
         console.log('usted no edberia estar aca porq ue no esta logueado')
-        // onNavigate('/login')
+        onNavigate('/login')
       }
 
       console.log('el estado de usuario cambio y no esta logueado')
@@ -101,9 +59,6 @@ function registerUser(name='',email='',password='') {
         displayName: name, 
         photoURL: gravatar,
       })
-
-
-      // return logout()
     })
     .then(() => {
 
@@ -125,7 +80,6 @@ function registerUser(name='',email='',password='') {
 
 
 //Iniciar sesion con ususario existente
-
 function singIn (email,password) {
 
   return signInWithEmailAndPassword(auth, email, password)
@@ -144,7 +98,7 @@ function singIn (email,password) {
 
 //iniciar sesion con google
 function singInGoogle() {
-// const auth = getAuth();
+
 const provider = new GoogleAuthProvider();
   return signInWithPopup(auth, provider)
     .then((result) => {

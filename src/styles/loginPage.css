@@ -40,8 +40,7 @@
     padding: 10px 7px;
     border-radius: 10px;
     font-size: 14px;
-    outline: none;
-    /* max-height: 50px;*/ }
+    outline: none; }
     .loginPage_formSingIn input:focus {
       background-color: #fbf7f0;
       border: 1px solid #F7990F;

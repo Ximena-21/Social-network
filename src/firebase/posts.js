@@ -156,35 +156,6 @@ function getMyPosts(idUser) {
 
 }
 
-//perfil .... 
-// async function getMyPosts(idUser) {
-
-//     const myPosts = query(postCollection, where('user.idUser', "==", 'idUser.uid'), limit(20))
-
-
-//    const querySnapshot =  await getDocs(myPosts)
-
-//     const posts = querySnapshot.docs.map(post => post.data())
-
-//     console.log(posts)
-
-// //    querySnapshot.forEach((data)=>{
-// //         const posts = datos.docs
-// //    })
-
-// //    .then((datos) => {
-
-// //         const posts = datos.docs.map(post => {
-// //             return post.data()
-// //         })
-
-// //         //console.log('estos son tus post')
-// //         return posts
-// //     })
-
-// }
-
-
 export {
     subscribeToRealTimePosts,
     getMyPosts,

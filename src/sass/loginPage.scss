@@ -42,7 +42,7 @@
     &_formSingIn input {
         @include input;
         outline: none;
-            /* max-height: 50px;*/
+        
         &:focus {
             background-color: #fbf7f0;
             border: 1px solid $secundary-color;
@@ -51,8 +51,6 @@
 
         &:active {
             box-shadow:  3px -3px 10px #fbcf8d,
-			//3px -3px 30px #F7990F,
-			//3px -3px 30px #F7990F, 
 			-3px 3px 10px #ee9f27;
         }
 
@@ -79,7 +77,6 @@
         justify-content: center;
         flex-direction: row;
         box-shadow: 1 2 3 grey;
-       // box-shadow: rgb(0 0 0 / 15%) 0px 1px 0px;
        margin-bottom: 10px;
     }
 
